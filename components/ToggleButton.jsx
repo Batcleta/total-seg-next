@@ -1,5 +1,5 @@
 import { useToggle } from "../context/appContext";
-import Theme from "../styles/Themes";
+import theme from "../styles/Theme";
 
 export default function ToggleButton() {
   const { toggle, isToggled } = useToggle();
@@ -16,6 +16,7 @@ export default function ToggleButton() {
         }
         /* Nav toggle */
         .nav__toggle {
+          z-index: 1;
           display: grid;
           justify-content: center;
           align-content: center;
@@ -23,7 +24,7 @@ export default function ToggleButton() {
           width: 3rem;
           height: 3rem;
 
-          background: ${Theme.color.mainColor};
+          background: ${theme.color.mainColor};
           border-radius: 2rem;
           box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25),
             0px 20px 40px rgba(0, 0, 0, 0.25);
