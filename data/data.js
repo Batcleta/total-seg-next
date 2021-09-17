@@ -8,6 +8,29 @@ const websiteData = {
     { title: "Contato", link: "contato" },
   ],
 
+  advantagesCarroussel: [
+    {
+      subtitle: "Para seu pet",
+      description:
+        "O Alarme monitorado total segurança foi desenvolvido pensando também no seu Pet. Com a nossa tecnologia pet imunity, seu pet ( com até 20kg ) pode andar seguro pelo ambiente sem acionar os sensores, evitando disparos acidentais.",
+    },
+    {
+      subtitle: "Para Sua Família",
+      description:
+        "Com nosso sistema de alarme residencial monitorado, sua familia e sua residencia estão sempre protegidos e você ainda consegue monitorar e falar com as pessoas no ambiente, em tempo real através de nosso aplicativo.",
+    },
+    {
+      subtitle: "Para Sua empresa",
+      description:
+        "Nosso sistema de alarme empresarial foi desenhado para preencher os pontos fracos de seu comércio ou escritório, além de contar com monitoramento 24 horas, cisparo perimetral ou botão de pânico discreto e aviso imediato a polícia.",
+    },
+    {
+      subtitle: "Em qualquer emergência",
+      description:
+        "Em caso de pessoas idosas em casa, nossa central de monitoramento 24h está pronta para atendimento de disparos emergenciais de saúde ou acidente acionados pelo controle de pânico, avisando um contato cadastrado e acionando as autoridades cabiveis ( samu, bombeiros, policia, etc. )",
+    },
+  ],
+
   advantagesCards: [
     {
       icon: `/card-icon-24h-monitoring.svg`,
