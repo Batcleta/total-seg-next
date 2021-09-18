@@ -50,6 +50,7 @@ const SiteMenu = () => {
 
           padding: 1.5rem;
           width: 100vw;
+          z-index: 100;
         }
 
         .nav__container {
@@ -59,11 +60,15 @@ const SiteMenu = () => {
         }
 
         .nav__image {
-          z-index: 2;
+          z-index: 102;
+          transition: .3s;
+          transform: scale(${!toggle ? "" : "1.2"}) translate(${
+        !toggle ? "" : "1rem, 1rem"
+      });
         }
 
         .menu__container {
-          z-index: 1;
+          z-index: 101;
           position: fixed;
           top: 0;
           left: 0;
@@ -133,7 +138,7 @@ const SiteMenu = () => {
         }
 
         .nav__background {
-          z-index: 0;
+          z-index: 100;
           position: absolute;
           top: 0;
           left: 0;

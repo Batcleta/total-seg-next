@@ -1,11 +1,18 @@
+// next components
 import Head from "next/head";
-import CTAButton from "../components/CTAButton";
-import SiteMenu from "../components/Menu";
-import theme from "../styles/Theme";
+import Image from "next/image";
+// dependencies
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import websiteData from "../data/data";
+// components
+import Slide from "../components/slider/Slider";
+import CTAButton from "../components/CTAButton";
+import SiteMenu from "../components/Menu";
 import Card from "../components/Card";
+// theme
+import theme from "../styles/Theme";
+// data
+import websiteData from "../data/data";
 
 export default function Home() {
   const {
@@ -94,8 +101,28 @@ export default function Home() {
           </section>
 
           {/* section advantages */}
-          <section className="advantages container" id="#vantagens">
-            <div className="advanges__card">
+          <section className="advantages " id="#vantagens">
+            <div className="advantages__swiper">
+              <Slide>
+                {websiteData.advantagesCarroussel.map((item, index) => (
+                  <div className="keen-slider__slide slider__item">
+                    <div className="slide__image">
+                      <Image src={item.image} width={313} height={192} />
+                    </div>
+                    <div className="slider__title">Total Segurança</div>
+                    <div className="slider__subtitle">{item.subtitle}</div>
+                    <div className="slider__description">
+                      {item.description}
+                    </div>
+                  </div>
+                ))}
+              </Slide>
+              <div className="button__wrapper">
+                <CTAButton />
+              </div>
+            </div>
+
+            <div className="advanges__card container">
               {websiteData.advantagesCards.map((item) => (
                 <Card data={item} />
               ))}
@@ -183,6 +210,7 @@ export default function Home() {
         .we__call {
           margin-top: 2rem;
           transform: skewY(-3deg);
+          z-index: 0;
 
         }
 
@@ -239,6 +267,36 @@ export default function Home() {
 
       {/* section advantages section */}
       <style jsx>{`
+        .slider__item {
+          padding: 2rem 2.4rem;
+        }
+
+        .slider__title {
+          color: #ff0015;
+          font-weight: 800;
+          font-size: 20px;
+        }
+
+        .slide__image {
+          margin-bottom: 1.5rem;
+        }
+
+        .slider__subtitle {
+          font-weight: 800;
+          font-size: 23px;
+          color: #0b0b0b;
+          margin-bottom: 1.5rem;
+        }
+
+        .slider__description {
+          color: #0b0b0b;
+        }
+
+        .button__wrapper {
+          max-width: 18rem;
+          margin: 0 auto;
+        }
+
         .advanges__card {
           display: grid;
           grid-template-columns: auto auto;

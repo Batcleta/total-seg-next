@@ -5,7 +5,13 @@ const Card = ({ data }) => {
   return (
     <>
       <div className="card">
-        <Image src={icon} alt={alt} width={50} height={50} />
+        <Image
+          className="card__image"
+          src={icon}
+          alt={alt}
+          width={50}
+          height={50}
+        />
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
@@ -19,6 +25,11 @@ const Card = ({ data }) => {
 
           text-align: center;
         }
+
+        .card__image {
+          position: relative;
+        }
+
         .card h3 {
           margin-top: 1rem;
           color: #ff0015;

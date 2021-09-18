@@ -16,7 +16,7 @@ export default function ToggleButton() {
         }
         /* Nav toggle */
         .nav__toggle {
-          z-index: 1;
+          z-index: 102;
           display: grid;
           justify-content: center;
           align-content: center;
