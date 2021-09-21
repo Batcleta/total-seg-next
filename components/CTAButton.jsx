@@ -18,10 +18,10 @@ export default function CTAButton() {
           justify-content: center;
           align-items: center;
 
-          max-width: 18rem;
+          max-width: 17rem;
           height: 3rem;
 
-          background-color: ${theme.color.mainColor};
+          background: ${theme.color.mainLinear};
           border-radius: 2rem;
 
           transition: 0.2s;

@@ -11,6 +11,7 @@ const websiteData = {
   advantagesCarroussel: [
     {
       image: "/adv-company-image.jpg",
+      alt: "Proteção para sua empresa",
       subtitle: "Para Sua empresa",
       description:
         "Nosso sistema de alarme empresarial foi desenhado para preencher os pontos fracos de seu comércio ou escritório, além de contar com monitoramento 24 horas, cisparo perimetral ou botão de pânico discreto e aviso imediato a polícia.",
@@ -18,6 +19,7 @@ const websiteData = {
 
     {
       image: "/adv-family-image.jpg",
+      alt: "Proteção para a família",
       subtitle: "Para Sua Família",
       description:
         "Com nosso sistema de alarme residencial monitorado, sua familia e sua residencia estão sempre protegidos e você ainda consegue monitorar e falar com as pessoas no ambiente, em tempo real através de nosso aplicativo.",
@@ -25,12 +27,14 @@ const websiteData = {
 
     {
       image: "/adv-old-image.jpg",
+      alt: "Emergências de saúde",
       subtitle: "Em qualquer emergência",
       description:
         "Em caso de pessoas idosas em casa, nossa central de monitoramento 24h está pronta para atendimento de disparos emergenciais de saúde ou acidente acionados pelo controle de pânico, avisando um contato cadastrado e acionando as autoridades cabiveis ( samu, bombeiros, policia, etc. )",
     },
     {
       image: "/adv-pet-image.jpg",
+      alt: "Proteção para seu pet",
       subtitle: "Para seu pet",
       description:
         "O Alarme monitorado total segurança foi desenvolvido pensando também no seu Pet. Com a nossa tecnologia pet imunity, seu pet ( com até 20kg ) pode andar seguro pelo ambiente sem acionar os sensores, evitando disparos acidentais.",
@@ -65,6 +69,40 @@ const websiteData = {
       title: "Instalação imediata",
       description:
         "Um especialistas irá até o local e fará uma análise detalhada de pontos vulneráveis e seu alarme é instalado em menos de 24 horas",
+    },
+  ],
+  testimonials: [
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Jhon Doe photo",
+      client: "Jhon Doe",
+      whois: "DESIGNER AT BLUSH",
+      testimonial:
+        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+    },
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Jane Doe photo",
+      client: "Jane Doe",
+      whois: "DESIGNER AT BLUSH",
+      testimonial:
+        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+    },
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Arthur Doe photo",
+      client: "Arthur Doe",
+      whois: "DESIGNER AT BLUSH",
+      testimonial:
+        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+    },
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Paulo Doe photo",
+      client: "Paulo Doe",
+      whois: "DESIGNER AT BLUSH",
+      testimonial:
+        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
     },
   ],
 };

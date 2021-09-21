@@ -1,6 +1,7 @@
 // next components
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 // dependencies
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -115,7 +116,12 @@ export default function Home() {
                 {websiteData.advantagesCarroussel.map((item, index) => (
                   <div className="keen-slider__slide slider__item">
                     <div className="slide__image">
-                      <Image src={item.image} width={313} height={192} />
+                      <Image
+                        src={item.image}
+                        width={313}
+                        height={192}
+                        alt={item.alt}
+                      />
                     </div>
                     <div className="slider__title">Total Segurança</div>
                     <div className="slider__subtitle">{item.subtitle}</div>
@@ -138,7 +144,7 @@ export default function Home() {
           </section>
 
           <section className="app__container container">
-            <h2>O controle na palma da sua mão</h2>
+            <h2>Controle tudo através do seu smartphone</h2>
             <p>
               Através de nosso aplicativo você gerencia o seu alarme e acompanha
               acontece em sua empresa ou residência em tempo real com áudio
@@ -146,9 +152,55 @@ export default function Home() {
               no mundo através do seu smartphone.
             </p>
             <div className="app__image__container">
-              <div className="app__image__content"></div>
+              <Image
+                src={"/mobile-app-image.webp"}
+                width={400}
+                height={315}
+                alt={"Aplicativo Total Segurança"}
+              />
             </div>
-            <CTAButton />
+            <div className="button__wrapper">
+              <CTAButton />
+            </div>
+          </section>
+
+          <section className="testimonials">
+            <div className="testimonial__text__wrapper">
+              <h2>+ de 7.500 clientes</h2>
+              <p>
+                {" "}
+                Confiam a segurança de seus comércios e residencias ao alarme
+                monitrado total segurança
+              </p>
+            </div>
+
+            <div className="testimonial__swiper">
+              <Slide>
+                {websiteData.testimonials.map((item, index) => (
+                  <div className="keen-slider__slide slider__item">
+                    <div className="testimonial__wrapper">
+                      <div className="testimonial__image">
+                        <Image
+                          src={item.image}
+                          width={44}
+                          height={44}
+                          alt={item.alt}
+                        />
+                      </div>
+                      <h2 className="testimonial__title">{item.client}</h2>
+                      <h3 className="testimonial__subtitle">{item.whois}</h3>
+                      <p className="testimonial__description">
+                        {item.testimonial}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </Slide>
+            </div>
+
+            <Link href="/area-do-cliente">
+              <a>Envie seu depoimento</a>
+            </Link>
           </section>
         </main>
 
@@ -237,7 +289,7 @@ export default function Home() {
 
         .we__call__Info {
           border-radius: .5rem;
-          background: ${theme.color.mainColor}};
+          background: ${theme.color.mainLinear}};
         }
 
         .we__call__Info h2{
@@ -284,8 +336,6 @@ export default function Home() {
           border: none;
 
           background-color: white;
-
-
          
         }
 
@@ -303,12 +353,13 @@ export default function Home() {
         .advantages {
           padding: 4rem 0;
         }
+
         .advantages__text__wrapper {
           padding: 0 1.2rem 2rem;
         }
 
         .slider__item {
-          padding: 0rem 2rem;
+          padding: 0rem 1.2rem;
         }
 
         .slider__title {
@@ -335,7 +386,7 @@ export default function Home() {
         }
 
         .button__wrapper {
-          max-width: 18rem;
+          max-width: 17rem;
           margin: 0 auto;
         }
 
@@ -348,12 +399,13 @@ export default function Home() {
         }
       `}</style>
 
+      {/* Section App */}
       <style jsx>{`
         .app__container {
         }
 
         .app__container h2 {
-          font-size: 2.2rem;
+          font-size: 2.5rem;
           line-height: 110%;
           font-weight: 800;
           color: ${theme.color.mainColor};
@@ -367,15 +419,60 @@ export default function Home() {
         }
 
         .app__image__container {
-          margin-top: 2.5rem;
-          border-radius: 1rem;
-          background-color: ${theme.color.mainColor};
-          height: 15rem;
-          width: 100%;
-
-          transform: skewY(4deg);
+          display: grid;
+          padding: 1.5rem 0 0;
         }
       `}</style>
+
+      <style jsx>{`
+        .testimonial {
+          padding: 4rem 0 0;
+        }
+
+        .testimonial__text__wrapper h2 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #ff0015;
+          margin-bottom: 1rem;
+        }
+
+        .testimonial__swiper {
+          padding: 1rem 0;
+        }
+
+        .testimonial__wrapper {
+          width: 300px;
+          background: #ff0015;
+          box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+          border-radius: 1rem;
+          padding: 1.5rem;
+          display: grid;
+          gap: 0.4rem;
+          margin-bottom: 3rem;
+        }
+
+        .testimonial__title {
+          font-size: 1, 0625rem.;
+          color: #fff;
+        }
+
+        .testimonial__subtitle {
+          font-size: 0, 8125rem;
+          color: #ffa3a3;
+        }
+
+        .testimonial__description {
+          font-size: 0, 9rem;
+          color: #ffffff80;
+          line-height: 130%;
+        }
+
+        .testimonial__text__wrapper {
+          padding: 1.2rem;
+        }
+      `}</style>
+
+      <style jsx>{``}</style>
       <style jsx>{``}</style>
     </>
   );
