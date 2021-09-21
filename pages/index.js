@@ -74,7 +74,7 @@ export default function Home() {
 
           {/* Section call-us */}
           <section className="we__call">
-            <div className="we__call__Info">
+            <div className="we__call__Info container">
               <h2>Prefere que entremos em contato?</h2>
               <p>
                 Informe um telefone que um de nosssos especialistas entrará em
@@ -101,7 +101,15 @@ export default function Home() {
           </section>
 
           {/* section advantages */}
-          <section className="advantages " id="#vantagens">
+          <section className="advantages" id="#vantagens">
+            <div className="advantages__text__wrapper">
+              <h2>Principais Vantagens</h2>
+              <p>
+                Com o alarme monitorado total segurança, seu patrimonio está
+                sempre protegido{" "}
+              </p>
+            </div>
+
             <div className="advantages__swiper">
               <Slide>
                 {websiteData.advantagesCarroussel.map((item, index) => (
@@ -122,11 +130,25 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="advanges__card container">
+            <div className="advanges__card">
               {websiteData.advantagesCards.map((item) => (
                 <Card data={item} />
               ))}
             </div>
+          </section>
+
+          <section className="app__container container">
+            <h2>O controle na palma da sua mão</h2>
+            <p>
+              Através de nosso aplicativo você gerencia o seu alarme e acompanha
+              acontece em sua empresa ou residência em tempo real com áudio
+              bilateral e imagem de alta qualidade. Tudo isso de qualquer lugar
+              no mundo através do seu smartphone.
+            </p>
+            <div className="app__image__container">
+              <div className="app__image__content"></div>
+            </div>
+            <CTAButton />
           </section>
         </main>
 
@@ -140,7 +162,7 @@ export default function Home() {
       {/* Global document style */}
       <style jsx>{`
         .container {
-          padding: 1.2rem;
+          padding: 4rem 1.2rem;
           overflow: hidden;
         }
       `}</style>
@@ -148,7 +170,7 @@ export default function Home() {
       {/* Header style */}
       <style jsx>{`
         header {
-          margin-top: 7rem;
+          margin-top: 3rem;
         }
 
         .header__main__info {
@@ -208,7 +230,6 @@ export default function Home() {
       <style jsx>{`
 
         .we__call {
-          margin-top: 2rem;
           transform: skewY(-3deg);
           z-index: 0;
 
@@ -216,7 +237,6 @@ export default function Home() {
 
         .we__call__Info {
           border-radius: .5rem;
-          padding: 3rem 1.5rem;
           background: ${theme.color.mainColor}};
         }
 
@@ -239,36 +259,56 @@ export default function Home() {
           transform: skewY(3deg);
           display: grid;
           gap: 1rem;
-          width: 19rem;
+          max-width: 20rem;
         }
 
         .we__call__Info input{
-          height: 3rem;
+          height: 3.5rem;
           border-radius: 2rem;
           padding-left: 1.5rem;
           font-size: .95rem;
+          background-color: rgba(255,255,255,.75);
+        }
 
+        .we__call__Info input::placeholder{
+          color: #000;
         }
 
          .send__button{
-          height: 2.8rem;
+          height: 3.5rem;
           border-radius: 2rem;
           font-size: .95rem;
-          max-width: 10rem;
 
           background: none;
           outline: none;
-          border: 1px solid white;
+          border: none;
 
+          background-color: white;
+
+
+         
+        }
+
+        @media(min-width: 1280px){
+          .send__button{
+            border: 1px solid white;
           color: white;
+          }
         }
 
       `}</style>
 
       {/* section advantages section */}
       <style jsx>{`
+        .advantages {
+          padding: 4rem 0;
+        }
+        .advantages__text__wrapper {
+          padding: 0 1.2rem 2rem;
+        }
+
         .slider__item {
-          padding: 2rem 2.4rem;
+          padding: 0rem 2rem;
         }
 
         .slider__title {
@@ -278,7 +318,7 @@ export default function Home() {
         }
 
         .slide__image {
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.8rem;
         }
 
         .slider__subtitle {
@@ -289,7 +329,9 @@ export default function Home() {
         }
 
         .slider__description {
-          color: #0b0b0b;
+          font-size: 1rem;
+          line-height: 130%;
+          color: ${theme.color.mainTextColor};
         }
 
         .button__wrapper {
@@ -301,10 +343,39 @@ export default function Home() {
           display: grid;
           grid-template-columns: auto auto;
           gap: 1rem;
+          margin-top: 2.5rem;
+          padding: 0 1.2rem;
         }
       `}</style>
 
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .app__container {
+        }
+
+        .app__container h2 {
+          font-size: 2.2rem;
+          line-height: 110%;
+          font-weight: 800;
+          color: ${theme.color.mainColor};
+          margin-bottom: 1.5rem;
+        }
+
+        .app__container p {
+          font-size: 1rem;
+          line-height: 130%;
+          color: ${theme.color.mainTextColor};
+        }
+
+        .app__image__container {
+          margin-top: 2.5rem;
+          border-radius: 1rem;
+          background-color: ${theme.color.mainColor};
+          height: 15rem;
+          width: 100%;
+
+          transform: skewY(4deg);
+        }
+      `}</style>
       <style jsx>{``}</style>
     </>
   );
