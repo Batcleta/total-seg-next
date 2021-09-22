@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import theme from "../../styles/Theme";
 
-export default ({ children }, props) => {
-  const [loaded, setLoaded] = useState([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
+const Slider = (props) => {
+  const { children, SperView } = props;
+  const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
-    slidesPerView: 1,
+    slidesPerView: SperView || 1,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
   });
-
-  useEffect(() => {
-    const new_loaded = [...loaded];
-    new_loaded[currentSlide] = true;
-    setLoaded(new_loaded);
-  }, [currentSlide]);
 
   return (
     <>
@@ -87,6 +81,8 @@ export default ({ children }, props) => {
     </>
   );
 };
+
+export default Slider;
 
 function ArrowLeft(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";

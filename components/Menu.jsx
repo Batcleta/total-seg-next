@@ -27,7 +27,9 @@ const SiteMenu = () => {
                 <li className="menu__item" key={index}>
                   <i className={item.icon}></i>
                   <Link href={`#${item.link}`}>
-                    <a className="menu__link">{item.title}</a>
+                    <a className="menu__link" onClick={() => isToggled(false)}>
+                      {item.title}
+                    </a>
                   </Link>
                 </li>
               ))}

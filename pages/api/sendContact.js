@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default function SendContact(req, res) {
   require("dotenv").config();
 
   const data = req.body;
@@ -6,19 +6,19 @@ export default function (req, res) {
   let nodemailer = require("nodemailer");
 
   const transporter = nodemailer.createTransport({
-    host: "trilhatecnologia.com", //process env
-    port: 465,
-    secure: true,
+    host: process.env.MAIL__HOST,
+    port: process.env.MAIL__PORT,
+    secure: process.env.MAIL__SECURITY,
     auth: {
-      user: "washington.f@trilhatecnologia.com",
+      user: process.env.MAIL__USER,
       pass: process.env.MAIL__PASS,
     },
   });
 
   let mailOptions = {
-    from: '"Website Total Seguranca" <washington.f@trilhatecnologia.com>', // sender address
-    to: "vendas@trilhatecnologia.com",
-    subject: "Elias Viadão",
+    from: process.env.MAIL__SENT__FROM,
+    to: process.env.MAIL__SEND__TO,
+    subject: process.env.MAIL__SUBJECT,
     html: `<div>
 
               <h1>Formulário de contato</h1>

@@ -1,9 +1,8 @@
-import '../styles/globals.css'
-import Head from 'next/head'
-import { AppWrapper } from '../context/appContext'
+import "../styles/globals.css";
+import Head from "next/head";
+import { AppWrapper } from "../context/appContext";
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <>
       <Head>
@@ -17,9 +16,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </AppWrapper>
     </>
-
-  )
-
+  );
 }
 
-export default MyApp
+export default MyApp;

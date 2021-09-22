@@ -20,8 +20,15 @@
   margin: 1rem 0;
 }
 
+.headingH2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff0015;
+  margin-bottom: 1rem;
+}
+
 .headingH3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 700;
 }
@@ -29,7 +36,7 @@
 .mainParagraph {
   font-size: 1rem;
   line-height: 130%;
-  color: #0b0b0b;
+  color: #707070;
 }
 
 .borderCircle {
