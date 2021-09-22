@@ -6,7 +6,7 @@ export default function (req, res) {
   let nodemailer = require("nodemailer");
 
   const transporter = nodemailer.createTransport({
-    host: "trilhatecnologia.com",
+    host: "trilhatecnologia.com", //process env
     port: 465,
     secure: true,
     auth: {

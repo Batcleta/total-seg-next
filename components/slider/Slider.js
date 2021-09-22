@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import theme from "../../styles/Theme";
 
 export default ({ children }, props) => {
-  const { noArrow } = props;
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [loaded, setLoaded] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
+    slidesPerView: 1,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
   });
+
+  useEffect(() => {
+    const new_loaded = [...loaded];
+    new_loaded[currentSlide] = true;
+    setLoaded(new_loaded);
+  }, [currentSlide]);
 
   return (
     <>
