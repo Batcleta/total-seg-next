@@ -14,7 +14,7 @@ const SiteMenu = () => {
         <div className="nav__container">
           <div className="nav__image">
             <Image
-              src={"/web-menu-logo.svg"}
+              src={"/web-logo-total-seguranca.svg"}
               alt="logo total segurança"
               width={134}
               height={43}

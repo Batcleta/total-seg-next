@@ -143,6 +143,7 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Section App */}
           <section className="app__container container">
             <h2>Controle tudo através do seu smartphone</h2>
             <p>
@@ -164,6 +165,7 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Section Testimonials */}
           <section className="testimonials">
             <div className="testimonial__text__wrapper">
               <h2>+ de 7.500 clientes</h2>
@@ -193,21 +195,96 @@ export default function Home() {
                         {item.testimonial}
                       </p>
                     </div>
+                    <Link href="/area-do-cliente">
+                      <a className="testimonial__add__link">
+                        Envie seu depoimento
+                      </a>
+                    </Link>
                   </div>
                 ))}
               </Slide>
             </div>
+          </section>
 
-            <Link href="/area-do-cliente">
-              <a>Envie seu depoimento</a>
-            </Link>
+          {/* Section Equipments */}
+          <section className="equipment container">
+            <div className="equipment__text__wrapper">
+              <h2>Conheça seu novo equipamento</h2>
+              <p>teste de equipamento</p>
+            </div>
+
+            {websiteData.equipment.map((item, index) => (
+              <div className="equipment__content" key={index}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={375}
+                  height={346}
+                />
+
+                <div className="equipment__content-text">
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+
+                  {index % 2 === 0 ? (
+                    <div className="button__wrapper">
+                      <CTAButton />
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            ))}
+          </section>
+
+          {/* Section call-us */}
+          <section className="we__call">
+            <div className="we__call__Info container">
+              <h2>Prefere que entremos em contato?</h2>
+              <p>
+                Informe um telefone que um de nosssos especialistas entrará em
+                contato
+              </p>
+
+              <form onSubmit={handleSubmit(weCallSubmit)}>
+                <input
+                  type="text"
+                  placeholder="Digite seu nome"
+                  {...register("nome")}
+                />
+                <input
+                  type="phone"
+                  placeholder="Digite seu telefone"
+                  {...register("telefone")}
+                />
+                <button className="send__button" type="submit">
+                  Enviar
+                </button>
+              </form>
+            </div>
+            <div className="we__call__Image"></div>
           </section>
         </main>
 
-        <footer>
-          <span>
-            {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
-          </span>
+        <footer className="container">
+          <Image
+            src="/web-logo-total-seguranca.svg"
+            alt="Total segurança Logo"
+            width={134}
+            height={43}
+          />
+
+          <div className="footer__info">Total segurança © 2021</div>
+          <div className="footer__links">
+            <Link href="/termos-de-serviço">
+              <a className="footer__link">Termos de serviço</a>
+            </Link>
+
+            <Link href="/termos-de-privacidade">
+              <a className="footer__link">Termos de privacidade</a>
+            </Link>
+          </div>
         </footer>
       </div>
 
@@ -315,7 +392,7 @@ export default function Home() {
         }
 
         .we__call__Info input{
-          height: 3.5rem;
+          height: 3.125rem;
           border-radius: 2rem;
           padding-left: 1.5rem;
           font-size: .95rem;
@@ -327,7 +404,7 @@ export default function Home() {
         }
 
          .send__button{
-          height: 3.5rem;
+          height: 3.125rem;
           border-radius: 2rem;
           font-size: .95rem;
 
@@ -359,7 +436,7 @@ export default function Home() {
         }
 
         .slider__item {
-          padding: 0rem 1.2rem;
+          padding: 0rem 1.5rem;
         }
 
         .slider__title {
@@ -424,6 +501,7 @@ export default function Home() {
         }
       `}</style>
 
+      {/* Section Testimonials] */}
       <style jsx>{`
         .testimonial {
           padding: 4rem 0 0;
@@ -448,7 +526,7 @@ export default function Home() {
           padding: 1.5rem;
           display: grid;
           gap: 0.4rem;
-          margin-bottom: 3rem;
+          margin-bottom: 1rem;
         }
 
         .testimonial__title {
@@ -470,10 +548,65 @@ export default function Home() {
         .testimonial__text__wrapper {
           padding: 1.2rem;
         }
+
+        .testimonial__add__link {
+          font-size: 0.813;
+          font-weight: 600;
+          color: ${theme.color.mainColor};
+          padding: 0 1rem;
+
+          margin-bottom: 2rem;
+          display: block;
+        }
       `}</style>
 
-      <style jsx>{``}</style>
-      <style jsx>{``}</style>
+      {/* Section equipment */}
+      <style jsx>{`
+        .equipment__text__wrapper {
+        }
+
+        .equipment__content {
+          padding: 3rem 0;
+        }
+
+        .equipment__content-text {
+          margin-top: 2rem;
+          text-align: center;
+          padding: 0 1rem;
+        }
+        .equipment__content-text h2 {
+          text-align: center;
+          font-weight: 800;
+          font-size: 23px;
+          color: ${theme.color.mainColor};
+          margin-bottom: 1.5rem;
+        }
+
+        .equipment__content-text p {
+          color: #0b0b0b;
+          font-size: 1rem;
+        }
+      `}</style>
+
+      {/* Footer */}
+      <style jsx>{`
+        footer {
+          display: grid;
+          gap: 2rem;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .footer__info {
+          text-align: center;
+        }
+
+        .footer__link {
+          font-size: 0.813rem;
+          color: #00000099;
+          padding: 1rem;
+        }
+      `}</style>
     </>
   );
 }

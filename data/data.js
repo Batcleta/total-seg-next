@@ -7,7 +7,6 @@ const websiteData = {
     { title: "Total Alarme", link: "nossoAlarme" },
     { title: "Contato", link: "contato" },
   ],
-
   advantagesCarroussel: [
     {
       image: "/adv-company-image.jpg",
@@ -40,7 +39,6 @@ const websiteData = {
         "O Alarme monitorado total segurança foi desenvolvido pensando também no seu Pet. Com a nossa tecnologia pet imunity, seu pet ( com até 20kg ) pode andar seguro pelo ambiente sem acionar os sensores, evitando disparos acidentais.",
     },
   ],
-
   advantagesCards: [
     {
       icon: `/card-icon-24h-monitoring.svg`,
@@ -103,6 +101,50 @@ const websiteData = {
       whois: "DESIGNER AT BLUSH",
       testimonial:
         "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+    },
+  ],
+  equipment: [
+    {
+      image: "/mobile-camera-image.png",
+      alt: "total segurança camera full hd",
+      title: "Smart Câmera Full HD com audio bilateral",
+      description:
+        "Seu sistema de alarme é integrado com câmeras sem fio de alta definição e inteligência artificial para detecção de pessoas e ruídos, além de um sistema de áudio bidirecional que lhe permite ouvir e falar com quem está no ambiente",
+    },
+    {
+      image: "/mobile-sensor-p-image.png",
+      alt: "Sensor infravermelho total segurança",
+      title: "Sensor Infravermelho com tecnologia Pet Imunity",
+      description:
+        "Nosso sensor infravermelho possui uma avançada tecnologia para detecção e análise de movimentos e violação que detecta tentativas de retirada de sua posição, mesmo com a central desarmada. Possui também a tecnologia Pet Imnunity que o permite distinguir seu pet de ameaças reais",
+    },
+    {
+      image: "/mobile-sensor-a-image.png",
+      alt: "sensor de abertura total segurança",
+      title: "Sensor de portas e janelas com sistema anti-impacto",
+      description:
+        "Os sensores magnéticos de abertura de portas e janelas de nosso sistema de alarme identifica a presença do invasor antes mesmo dele entrar em sua casa através de sua tecnologia anto-impacto inteligente",
+    },
+    {
+      image: "/mobile-sirene-image.png",
+      alt: "Sirene de alta potência total segurança",
+      title: "Sirene sem Fio de alta potência",
+      description:
+        "Através de aviso sonoro de alta potência, notifica mudanças de status, invasões ou indicações de emergência. A comunicação entre a sirene e a central é remota e alcança até 600 metros de distância, o que proporciona uma instalação simples e prática.",
+    },
+    {
+      image: "/mobile-central-image.png",
+      alt: "Central de alarme total segurança",
+      title: "Smart central sem fio",
+      description:
+        "Elegante e discreta, nossa smart central é o coração do seu alarme. Possui capacidade de arme e desarme em pontos individuais, maior alcance de cobertura e está 100% integrada ao nossos sistema de monitoramento 24h",
+    },
+    {
+      image: "/mobile-control-image.png",
+      alt: "Controle de alarme, remoto total segurança",
+      title: "Controle Portátil para arme, desarme e pânico",
+      description:
+        "Com ele você tem o controle de arme e desarme de seu alarme com praticidade. Também conta com um botão S.O.S para casos de emergência. ",
     },
   ],
 };

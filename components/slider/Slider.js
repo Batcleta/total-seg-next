@@ -60,8 +60,8 @@ export default ({ children }, props) => {
 
         .dot {
           border: none;
-          width: 10px;
-          height: 10px;
+          width: 7px;
+          height: 7px;
           background: #c5c5c5;
           border-radius: 50%;
           margin: 0 5px;
