@@ -7,6 +7,14 @@ const websiteData = {
     { title: "Total Alarme", link: "nossoAlarme" },
     { title: "Contato", link: "contato" },
   ],
+  menuWeb: [
+    { title: "Inicio", link: "inicio" },
+    { title: "Vantagens", link: "vantagens" },
+    { title: "Smart App", link: "app" },
+    { title: "Clientes", link: "clientes" },
+    { title: "Total Alarme", link: "nossoAlarme" },
+    { title: "Contato", link: "contato" },
+  ],
   advantagesCarroussel: [
     {
       image: "/adv-company-image.jpg",

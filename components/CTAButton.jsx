@@ -22,7 +22,7 @@ export default function CTAButton() {
           height: 3rem;
 
           background: ${theme.color.mainLinear};
-          border-radius: 2rem;
+          border-radius: 4rem;
 
           transition: 0.2s;
         }

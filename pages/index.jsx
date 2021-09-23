@@ -30,34 +30,59 @@ export default function Home() {
       <main className={styles.main}>
         {/* Header */}
         <header className={styles.container} id="inicio">
-          <div className="header__main__info">
-            <h3 className={` ${utilStyles.headingH3}`}>O melhor</h3>
-            <h1 className="header__title">
-              Alarme monitorado
-              <br />
-              <span className="header__title__span"> Com aviso a polícia</span>
-            </h1>
+          <Image
+            className="header__background"
+            src={"/header-background-total-seguranca.jpg"}
+            alt={"teste de background"}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="left center"
+          />
+          <div className="info__wrapper">
+            <div className="header__main__info">
+              <h3 className={` ${utilStyles.headingH3}`}>O melhor</h3>
+              <h1 className="header__title">
+                Alarme monitorado
+                <br />
+                <span className="header__title__span">
+                  {" "}
+                  Com aviso a polícia
+                </span>
+              </h1>
+            </div>
+
+            <div className="header__subinfo">
+              <h2 className="hader__subinfo__heading">
+                <span>100%</span> Sem fio, com
+              </h2>
+              <h2 className="hader__subinfo__heading">
+                <span>50%</span> de desconto
+              </h2>
+              <small className="small__text">por tempo limitado</small>
+            </div>
+
+            <CTAButton />
+
+            <p className={`header__description ${utilStyles.mainParagraph}`}>
+              A união perfeita entre a ultima geração de câmeras de segurança
+              com gravação em full HD e um sistema de alarme monitorado de alta
+              precisão <span>com aviso a policia.</span>
+            </p>
           </div>
-
-          <div className="header__subinfo">
-            <h2 className="hader__subinfo__heading">
-              <span>100%</span> Sem fio, com
-            </h2>
-            <h2 className="hader__subinfo__heading">
-              <span>50%</span> de desconto
-            </h2>
-            <small className="small__text">por tempo limitado</small>
-          </div>
-
-          <CTAButton />
-
-          <p className={`header__description ${utilStyles.mainParagraph}`}>
-            A união perfeita entre a ultima geração de câmeras de segurança com
-            gravação em full HD e um sistema de alarme monitorado de alta
-            precisão <span>com aviso a policia.</span>
-          </p>
 
           <style jsx>{`
+            .header__background {
+              display: none;
+              opacity: 0.1;
+              transform: skewY(20deg);
+            }
+
+            .info__wrapper {
+              position: relative;
+              z-index: 1;
+              max-width: 23.563rem;
+            }
+
             .header__main__info {
               display: grid;
               gap: 1rem;
@@ -102,6 +127,14 @@ export default function Home() {
               color: ${theme.color.mainColor};
             }
           `}</style>
+
+          <style jsx>{`
+            @media (min-width: 1280px) {
+              .header__background {
+                z-index: 0;
+              }
+            }
+          `}</style>
         </header>
 
         {/* component section - we call */}
@@ -117,43 +150,47 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="advantages__swiper">
-            <Slider>
-              {websiteData.advantagesCarroussel.map((item, index) => (
-                <div
-                  className="keen-slider__slide lazy__slide slider__item"
-                  key={index}
-                >
-                  <div className="slide__image">
-                    <Image
-                      src={item.image}
-                      width={313}
-                      height={192}
-                      alt={item.alt}
-                    />
+          <div className="advantages__column__wrapper">
+            <div className="advantages__swiper">
+              <Slider>
+                {websiteData.advantagesCarroussel.map((item, index) => (
+                  <div
+                    className="keen-slider__slide lazy__slide slider__item"
+                    key={index}
+                  >
+                    <div className="slide__image">
+                      <Image
+                        src={item.image}
+                        width={313}
+                        height={192}
+                        alt={item.alt}
+                      />
+                    </div>
+                    <div className="slider__title">Total Segurança</div>
+                    <div className="slider__subtitle">{item.subtitle}</div>
+                    <div className={utilStyles.mainParagraph}>
+                      {item.description}
+                    </div>
                   </div>
-                  <div className="slider__title">Total Segurança</div>
-                  <div className="slider__subtitle">{item.subtitle}</div>
-                  <div className={utilStyles.mainParagraph}>
-                    {item.description}
-                  </div>
-                </div>
-              ))}
-            </Slider>
-            <div className={styles.button__wrapper}>
-              <CTAButton />
+                ))}
+              </Slider>
+              <div className={styles.button__wrapper}>
+                <CTAButton />
+              </div>
             </div>
-          </div>
 
-          <div className="advanges__card">
-            {websiteData.advantagesCards.map((item, index) => (
-              <Card data={item} key={index} />
-            ))}
+            <div className="advanges__card">
+              {websiteData.advantagesCards.map((item, index) => (
+                <Card data={item} key={index} />
+              ))}
+            </div>
           </div>
 
           <style jsx>{`
             .advantages {
               padding: 4rem 0;
+            }
+            .advantages__column__wrapper {
             }
 
             .advantages__text__wrapper {
@@ -188,6 +225,58 @@ export default function Home() {
               gap: 1rem;
               margin-top: 2.5rem;
               padding: 0 1.2rem;
+            }
+          `}</style>
+
+          <style jsx>{`
+            @media (min-width: 1280px) {
+              .advantages {
+                position: relative;
+                padding: 0rem 0;
+                z-index: 20;
+
+                max-width: 1234px;
+                margin: 0 auto;
+              }
+              .advantages__column__wrapper {
+                display: flex;
+                flex-direction: row-reverse;
+              }
+
+              .advantages__text__wrapper {
+                padding: 0 1.2rem 2rem;
+              }
+
+              .slider__item {
+                padding: 0rem 1.5rem;
+                margin-bottom: 1rem;
+              }
+
+              .slider__title {
+                color: ${theme.color.mainColor};
+                font-weight: 700;
+                font-size: 1.2rem;
+              }
+
+              .slide__image {
+                display: none;
+                margin-bottom: 1.8rem;
+              }
+
+              .slider__subtitle {
+                font-weight: 800;
+                font-size: 23px;
+                color: ${theme.color.mainTextColor};
+                margin-bottom: 1.5rem;
+              }
+
+              .advanges__card {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 1rem;
+                margin-top: 2.5rem;
+                padding: 0 1.2rem;
+              }
             }
           `}</style>
         </section>

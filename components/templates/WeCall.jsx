@@ -39,7 +39,6 @@ export default function WeCall() {
           </button>
         </form>
       </div>
-      <div className="we__call__Image"></div>
 
       <style jsx>{`
         .we__call {
@@ -103,6 +102,74 @@ export default function WeCall() {
           border: 1px solid white;
           color: white;
           cursor: pointer;
+        }
+      `}</style>
+
+      <style jsx>{`
+        @media (min-width: 1280px) {
+          .we__call {
+            position: relative;
+
+            transform: skewY(0);
+            z-index: 10;
+
+            max-width: 1234px;
+            margin: 0 auto;
+          }
+
+          .we__call__Info {
+            position: absolute;
+            right: 0;
+            top: -10rem;
+
+            width: 409px;
+
+            background: ${theme.color.mainLinear};
+            padding: 2rem;
+          }
+
+          .we__call__Info h2 {
+            transform: skewY(0);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+          }
+
+          .we__call__Info p {
+            transform: skewY(0);
+          }
+
+          .we__call__Info form {
+            transform: skewY(0);
+            display: grid;
+            gap: 1rem;
+            max-width: initial;
+          }
+
+          .we__call__Info input {
+            height: 3.5rem;
+            border-radius: 2rem;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            background-color: rgba(255, 255, 255, 1);
+          }
+
+          .we__call__Info input::placeholder {
+            color: ${theme.color.mainTextColor};
+          }
+
+          .send__button {
+            height: 3.125rem;
+            border-radius: 2rem;
+            font-size: 0.95rem;
+
+            background: none;
+            outline: none;
+            border: none;
+
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+          }
         }
       `}</style>
     </section>
