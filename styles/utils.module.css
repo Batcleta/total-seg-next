@@ -48,13 +48,3 @@
 .borderCircle {
   border-radius: 9999px;
 }
-
-@media (min-width: 1280px) {
-  .menuLinkText {
-    font-size: 0.9rem;
-  }
-
-  .mainParagraph {
-    font-size: 0.95rem;
-  }
-}

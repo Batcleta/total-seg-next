@@ -29,58 +29,53 @@ export default function Home() {
       <SiteMenu />
       <main className={styles.main}>
         {/* Header */}
-        <header className={styles.container} id="inicio">
-          <Image
-            className="header__background"
-            src={"/header-background-total-seguranca.jpg"}
-            alt={"teste de background"}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="left center"
-          />
-          <div className="info__wrapper">
-            <div className="header__main__info">
-              <h3 className={` ${utilStyles.headingH3}`}>O melhor</h3>
-              <h1 className="header__title">
-                Alarme monitorado
-                <br />
-                <span className="header__title__span">
-                  {" "}
-                  Com aviso a polícia
-                </span>
-              </h1>
+        <header id="inicio">
+          <div className={styles.container}>
+            <div className="info__wrapper">
+              <div className="header__main__info">
+                <h3 className={` ${utilStyles.headingH3}`}>O melhor</h3>
+                <h1 className="header__title">
+                  Alarme monitorado
+                  <br />
+                  <span className="header__title__span">
+                    {" "}
+                    Com aviso a polícia
+                  </span>
+                </h1>
+              </div>
+
+              <div className="header__subinfo">
+                <h2 className="hader__subinfo__heading">
+                  <span>100%</span> Sem fio, com
+                </h2>
+                <h2 className="hader__subinfo__heading">
+                  <span>50%</span> de desconto
+                </h2>
+                <small className="small__text">por tempo limitado</small>
+              </div>
+
+              <CTAButton />
+
+              <p className={`header__description ${utilStyles.mainParagraph}`}>
+                A união perfeita entre a ultima geração de câmeras de segurança
+                com gravação em full HD e um sistema de alarme monitorado de
+                alta precisão <span>com aviso a policia.</span>
+              </p>
             </div>
-
-            <div className="header__subinfo">
-              <h2 className="hader__subinfo__heading">
-                <span>100%</span> Sem fio, com
-              </h2>
-              <h2 className="hader__subinfo__heading">
-                <span>50%</span> de desconto
-              </h2>
-              <small className="small__text">por tempo limitado</small>
-            </div>
-
-            <CTAButton />
-
-            <p className={`header__description ${utilStyles.mainParagraph}`}>
-              A união perfeita entre a ultima geração de câmeras de segurança
-              com gravação em full HD e um sistema de alarme monitorado de alta
-              precisão <span>com aviso a policia.</span>
-            </p>
           </div>
 
           <style jsx>{`
-            .header__background {
-              display: none;
-              opacity: 0.1;
-              transform: skewY(20deg);
+            header {
+              background-image: url("/shield-mobile-background.svg");
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: -130px center;
             }
 
             .info__wrapper {
               position: relative;
               z-index: 1;
-              max-width: 23.563rem;
+              max-width: 23rem;
             }
 
             .header__main__info {
@@ -130,6 +125,12 @@ export default function Home() {
 
           <style jsx>{`
             @media (min-width: 1280px) {
+              header {
+                background-image: url("/header-background-total-seguranca.jpg");
+                background-position: right center;
+                box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+              }
+
               .header__background {
                 z-index: 0;
               }
@@ -232,19 +233,29 @@ export default function Home() {
             @media (min-width: 1280px) {
               .advantages {
                 position: relative;
-                padding: 0rem 0;
-                z-index: 20;
+                padding: 5rem 0;
+                z-index: 1;
 
                 max-width: 1234px;
                 margin: 0 auto;
               }
-              .advantages__column__wrapper {
-                display: flex;
-                flex-direction: row-reverse;
-              }
 
               .advantages__text__wrapper {
                 padding: 0 1.2rem 2rem;
+
+                max-width: 26rem;
+              }
+
+              .advantages__column__wrapper {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-around;
+              }
+
+              .advantages__swiper {
+                align-self: center;
+
+                max-width: 26rem;
               }
 
               .slider__item {
@@ -254,8 +265,9 @@ export default function Home() {
 
               .slider__title {
                 color: ${theme.color.mainColor};
-                font-weight: 700;
-                font-size: 1.2rem;
+                font-weight: 900;
+                font-size: 3rem;
+                margin-bottom: 1rem;
               }
 
               .slide__image {
@@ -265,16 +277,18 @@ export default function Home() {
 
               .slider__subtitle {
                 font-weight: 800;
-                font-size: 23px;
+                font-size: 1.5rem;
                 color: ${theme.color.mainTextColor};
                 margin-bottom: 1.5rem;
               }
 
               .advanges__card {
                 display: grid;
+                justify-content: start;
+
                 grid-template-columns: auto auto;
-                gap: 1rem;
-                margin-top: 2.5rem;
+                gap: 1.5rem;
+                margin-top: 3rem;
                 padding: 0 1.2rem;
               }
             }

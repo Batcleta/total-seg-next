@@ -17,23 +17,25 @@ export default function WeCall() {
   return (
     <section className="we__call">
       <div className="we__call__Info container">
-        <h2>Prefere que entremos em contato?</h2>
+        <h2>Nós te ligamos!</h2>
         <p>
           Informe seu Nome e um telefone que um de nosssos especialistas entrará
           em contato
         </p>
 
         <form onSubmit={handleSubmit(weCallSubmit)}>
-          <input
-            type="text"
-            placeholder="Digite seu nome"
-            {...register("nome")}
-          />
-          <input
-            type="phone"
-            placeholder="Digite seu telefone"
-            {...register("telefone")}
-          />
+          <div className="we__Call-inputs">
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              {...register("nome")}
+            />
+            <input
+              type="phone"
+              placeholder="Digite seu telefone"
+              {...register("telefone")}
+            />
+          </div>
           <button className="send__button" type="submit">
             Enviar
           </button>
@@ -47,7 +49,7 @@ export default function WeCall() {
         }
 
         .we__call__Info {
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           background: ${theme.color.mainLinear};
           padding: 3rem 1.2rem;
         }
@@ -55,6 +57,7 @@ export default function WeCall() {
         .we__call__Info h2 {
           transform: skewY(3deg);
           font-size: 2.1rem;
+          line-height: 120%;
           margin-bottom: 1rem;
           font-weight: 800;
           color: rgba(255, 255, 255, 0.98);
@@ -120,37 +123,45 @@ export default function WeCall() {
           .we__call__Info {
             position: absolute;
             right: 0;
-            top: -10rem;
+            top: -11rem;
 
-            width: 409px;
+            max-width: 26rem;
 
-            background: ${theme.color.mainLinear};
+            background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
           }
 
           .we__call__Info h2 {
             transform: skewY(0);
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: ${theme.color.mainColor};
           }
 
           .we__call__Info p {
             transform: skewY(0);
+            font-size: 1rem;
+            font-weight: 600;
+            color: ${theme.color.mainTextColor};
           }
 
           .we__call__Info form {
             transform: skewY(0);
+            grid-template-columns: 15rem auto;
+            max-width: initial;
+          }
+
+          .we__Call-inputs {
+            margin-top: 0.5rem;
             display: grid;
             gap: 1rem;
-            max-width: initial;
           }
 
           .we__call__Info input {
             height: 3.5rem;
-            border-radius: 2rem;
-            padding-left: 1.5rem;
-            font-size: 0.95rem;
-            background-color: rgba(255, 255, 255, 1);
+            font-size: 1rem;
+            border: 1px solid ${theme.color.mainColor};
           }
 
           .we__call__Info input::placeholder {
@@ -158,17 +169,13 @@ export default function WeCall() {
           }
 
           .send__button {
-            height: 3.125rem;
-            border-radius: 2rem;
-            font-size: 0.95rem;
+            align-self: flex-end;
+            height: 3.5rem;
+            font-size: 1rem;
 
-            background: none;
+            background: ${theme.color.mainColor};
             outline: none;
             border: none;
-
-            border: 1px solid white;
-            color: white;
-            cursor: pointer;
           }
         }
       `}</style>
