@@ -513,8 +513,21 @@ export default function Home() {
           </div>
 
           {websiteData.equipment.map((item, index) => (
-            <div className="equipment__content" key={index}>
-              <Image src={item.image} alt={item.alt} width={375} height={346} />
+            <div
+              className={`equipment__content ${
+                index % 2 !== 0 ? "reverse" : ""
+              }`}
+              key={index}
+            >
+              <div className="image__wrapper">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={375}
+                  height={346}
+                  layout="responsive"
+                />
+              </div>
 
               <div className="equipment__content-text">
                 <h2>{item.title}</h2>
@@ -547,6 +560,42 @@ export default function Home() {
               font-size: 23px;
               color: ${theme.color.mainColor};
               margin-bottom: 1.5rem;
+            }
+          `}</style>
+
+          <style jsx>{`
+            @media (min-width: 1280px) {
+              .equipment__content {
+                padding: 3rem 1rem;
+
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+              }
+
+              .equipment__content.reverse {
+                flex-direction: row-reverse;
+              }
+
+              .equipment__content-text {
+                margin-top: 2rem;
+                text-align: left;
+                padding: 0 1rem;
+                max-width: 24rem;
+              }
+
+              .equipment__content-text h2 {
+                text-align: left;
+                font-weight: 800;
+                font-size: 23px;
+                color: ${theme.color.mainColor};
+                margin-bottom: 1.5rem;
+              }
+
+              .image__wrapper {
+                width: 469px;
+                height: 400px;
+              }
             }
           `}</style>
         </section>
