@@ -17,15 +17,16 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .container {
-    padding: 4rem 2.5rem;
-    max-width: 1234px;
+    padding: 4rem 1rem;
+    max-width: 1200px;
     margin: 0 auto;
+    /* background: pink; */
   }
 
   .main {
-    margin-top: 6rem;
+    margin-top: 4.3rem;
   }
 }
 

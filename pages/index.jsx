@@ -13,6 +13,7 @@ import Slider from "../components/slider/Slider";
 import Card from "../components/Card";
 // data
 import websiteData from "../data/data";
+import TestimonialCard from "../components/testimonialCard";
 
 export default function Home() {
   return (
@@ -153,7 +154,7 @@ export default function Home() {
 
           <div className="advantages__column__wrapper">
             <div className="advantages__swiper">
-              <Slider>
+              <Slider controls={true}>
                 {websiteData.advantagesCarroussel.map((item, index) => (
                   <div
                     className="keen-slider__slide lazy__slide slider__item"
@@ -233,7 +234,7 @@ export default function Home() {
             @media (min-width: 1280px) {
               .advantages {
                 position: relative;
-                padding: 5rem 0;
+                padding: 4rem 0;
                 z-index: 1;
 
                 max-width: 1234px;
@@ -241,25 +242,32 @@ export default function Home() {
               }
 
               .advantages__text__wrapper {
-                padding: 0 1.2rem 2rem;
+                padding: 0 1.2rem 1rem;
+                margin-left: 1rem;
 
                 max-width: 26rem;
+              }
+
+              .advantages__text__wrapper p {
+                font-size: 0.9rem;
               }
 
               .advantages__column__wrapper {
                 display: flex;
                 flex-direction: row-reverse;
-                justify-content: space-around;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 3rem;
+                margin-top: 2.5rem;
               }
 
               .advantages__swiper {
-                align-self: center;
-
                 max-width: 26rem;
+                align-self: end;
               }
 
               .slider__item {
-                padding: 0rem 1.5rem;
+                padding: 0rem 3rem;
                 margin-bottom: 1rem;
               }
 
@@ -287,23 +295,29 @@ export default function Home() {
                 justify-content: start;
 
                 grid-template-columns: auto auto;
-                gap: 1.5rem;
-                margin-top: 3rem;
-                padding: 0 1.2rem;
+                gap: 1rem;
+                margin-top: 0rem;
+                padding: 0;
               }
             }
           `}</style>
         </section>
 
         {/* Section App */}
-        <section className={styles.container} id="app">
-          <h2>O controle na palma da sua mão</h2>
-          <p className={utilStyles.mainParagraph}>
-            Através de nosso aplicativo você gerencia o seu alarme e acompanha
-            acontece em sua empresa ou residência em tempo real com áudio
-            bilateral e imagem de alta qualidade. Tudo isso de qualquer lugar no
-            mundo através do seu smartphone.
-          </p>
+        <section className={`${styles.container} app__wrapper`} id="app">
+          <div className="app__text-wrapper">
+            <h2>O controle na palma da sua mão</h2>
+            <p className={utilStyles.mainParagraph}>
+              Através de nosso aplicativo você gerencia o seu alarme e acompanha
+              acontece em sua empresa ou residência em tempo real com áudio
+              bilateral e imagem de alta qualidade. Tudo isso de qualquer lugar
+              no mundo através do seu smartphone.
+            </p>
+            <div className={` app__button-web`}>
+              <CTAButton className="teste" />
+            </div>
+          </div>
+
           <div className="app__image__container">
             <Image
               src={"/mobile-app-image.webp"}
@@ -312,8 +326,8 @@ export default function Home() {
               alt={"Aplicativo Total Segurança"}
             />
           </div>
-          <div className={styles.button__wrapper}>
-            <CTAButton />
+          <div className={`${styles.button__wrapper} app__button`}>
+            <CTAButton className="teste" />
           </div>
 
           <style jsx>{`
@@ -329,11 +343,55 @@ export default function Home() {
               display: grid;
               padding: 1.5rem 0 0;
             }
+
+            .app__button-web {
+              display: none;
+            }
+          `}</style>
+
+          <style jsx>{`
+            @media (min-width: 1280px) {
+              .app__wrapper {
+                display: flex;
+                gap: 5rem;
+                flex-direction: row-reverse;
+                justify-content: start;
+                align-items: center;
+              }
+
+              .app__text-wrapper {
+                max-width: 24rem;
+              }
+
+              .app__button-web {
+                display: initial;
+              }
+
+              .app__text-wrapper h2 {
+                font-size: 2.5rem;
+                line-height: 110%;
+                font-weight: 800;
+                color: ${theme.color.mainColor};
+                margin-bottom: 1.5rem;
+              }
+
+              .app__image__container {
+                display: grid;
+                padding: 1.5rem 0 0;
+                width: 552.57px;
+                height: 472px;
+                transform: translateX(-1rem);
+              }
+
+              .app__button {
+                display: none;
+              }
+            }
           `}</style>
         </section>
 
         {/* Section Testimonials */}
-        <section className="testimonials" id="clientes">
+        <section className="testimonial" id="clientes">
           <div className="testimonial__text__wrapper">
             <h2 className={utilStyles.headingH2}>+ de 7.500 clientes</h2>
             <p className={utilStyles.mainParagraph}>
@@ -342,25 +400,30 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="testimonial__swiper">
+          <div className="testimonial__swiper web">
+            <Slider SperView={2} controls={true}>
+              {websiteData.testimonials.map((item, index) => (
+                <div className="keen-slider__slide slider__item" key={index}>
+                  <TestimonialCard item={item} />
+                  {index === 0 ? (
+                    <Link href="/area-do-cliente">
+                      <a className="testimonial__add__link">
+                        Envie seu depoimento
+                      </a>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          <div className="testimonial__swiper mobile">
             <Slider SperView={35 / 32}>
               {websiteData.testimonials.map((item, index) => (
                 <div className="keen-slider__slide slider__item" key={index}>
-                  <div className="testimonial__wrapper">
-                    <div className="testimonial__image">
-                      <Image
-                        src={item.image}
-                        width={44}
-                        height={44}
-                        alt={item.alt}
-                      />
-                    </div>
-                    <h2 className="testimonial__title">{item.client}</h2>
-                    <h3 className="testimonial__subtitle">{item.whois}</h3>
-                    <p className="testimonial__description">
-                      {item.testimonial}
-                    </p>
-                  </div>
+                  <TestimonialCard item={item} />
                   {index === 0 ? (
                     <Link href="/area-do-cliente">
                       <a className="testimonial__add__link">
@@ -380,35 +443,12 @@ export default function Home() {
               padding: 4rem 0 0;
             }
 
+            .testimonial__swiper.web {
+              display: none;
+            }
+
             .slider__item {
               padding: 1rem 0 0 1.2rem;
-            }
-
-            .testimonial__wrapper {
-              width: 20rem;
-              background: ${theme.color.mainColor};
-              box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
-              border-radius: 1rem;
-              padding: 1.5rem;
-              display: grid;
-              gap: 0.4rem;
-              margin-bottom: 2rem;
-            }
-
-            .testimonial__title {
-              font-size: 1, 0625rem.;
-              color: #fff;
-            }
-
-            .testimonial__subtitle {
-              font-size: 0, 8125rem;
-              color: #ffa3a3;
-            }
-
-            .testimonial__description {
-              font-size: 0, 9rem;
-              color: #ffffff80;
-              line-height: 130%;
             }
 
             .testimonial__text__wrapper {
@@ -423,6 +463,42 @@ export default function Home() {
 
               margin-bottom: 1rem;
               display: block;
+            }
+          `}</style>
+
+          <style jsx>{`
+            @media (min-width: 1280px) {
+              .testimonial {
+                padding: 3rem 0 0;
+                max-width: 48rem;
+                margin: 0 auto;
+              }
+
+              .testimonial__swiper.mobile {
+                display: none;
+              }
+
+              .testimonial__swiper.web {
+                display: initial;
+              }
+
+              .testimonial__text__wrapper {
+                max-width: 24rem;
+              }
+
+              .slider__item {
+                padding: 1rem 0 0 2rem;
+              }
+
+              .testimonial__add__link {
+                font-size: 0.813;
+                font-weight: 600;
+                color: ${theme.color.mainColor};
+                padding: 0 1rem;
+
+                margin-bottom: 1rem;
+                display: block;
+              }
             }
           `}</style>
         </section>

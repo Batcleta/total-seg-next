@@ -81,6 +81,12 @@ export default function WeCall() {
           max-width: 20rem;
         }
 
+        .we__Call-inputs {
+          margin-top: 0.5rem;
+          display: grid;
+          gap: 1rem;
+        }
+
         .we__call__Info input {
           height: 3.125rem;
           border-radius: 2rem;
@@ -123,7 +129,7 @@ export default function WeCall() {
           .we__call__Info {
             position: absolute;
             right: 0;
-            top: -11rem;
+            top: -12rem;
 
             max-width: 26rem;
 
@@ -134,7 +140,7 @@ export default function WeCall() {
 
           .we__call__Info h2 {
             transform: skewY(0);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
             color: ${theme.color.mainColor};
           }
@@ -142,7 +148,7 @@ export default function WeCall() {
           .we__call__Info p {
             transform: skewY(0);
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 400;
             color: ${theme.color.mainTextColor};
           }
 
@@ -153,14 +159,16 @@ export default function WeCall() {
           }
 
           .we__Call-inputs {
-            margin-top: 0.5rem;
+            margin-top: 0.1rem;
             display: grid;
             gap: 1rem;
           }
 
           .we__call__Info input {
-            height: 3.5rem;
-            font-size: 1rem;
+            height: 3rem;
+            font-size: 0.9rem;
+            padding-left: 1.2rem;
+            letter-spacing: 0.05rem;
             border: 1px solid ${theme.color.mainColor};
           }
 
@@ -170,7 +178,7 @@ export default function WeCall() {
 
           .send__button {
             align-self: flex-end;
-            height: 3.5rem;
+            height: 3.1rem;
             font-size: 1rem;
 
             background: ${theme.color.mainColor};

@@ -160,11 +160,12 @@ const SiteMenu = (props) => {
           .nav__wrapper {
             position: absolute;
             box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
             background: white;
           }
 
           .nav__image {
-            width: 150px;
+            width: 7rem;
           }
 
           .nav__container {
@@ -173,6 +174,7 @@ const SiteMenu = (props) => {
             align-items: center;
 
             max-width: 1234px;
+            padding: 0 1rem;
             margin: 0 auto;
           }
 
@@ -219,8 +221,8 @@ const SiteMenu = (props) => {
             align-items: center;
             align-self: center;
 
-            width: 10rem;
-            height: 2.5rem;
+            width: 8.5rem;
+            height: 2.1rem;
 
             background-color: ${theme.color.mainColor};
             border-radius: 2rem;

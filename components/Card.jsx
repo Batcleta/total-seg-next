@@ -48,26 +48,25 @@ const Card = ({ data }) => {
         @media (min-width: 1280px) {
           .card {
             background: ${theme.color.mainLinear};
-            padding: 1.6rem;
+            padding: 1rem;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
             border-radius: 1rem;
 
-            max-width: 16rem;
+            max-width: 13rem;
             transition: 0.4s;
             overflow: hidden;
-            transform: scale(0.95);
           }
 
           .card:nth-child(2) {
-            transform: translateY(1.5rem) scale(0.95);
+            transform: translateY(1.5rem);
           }
 
           .card:nth-child(4) {
-            transform: translate(1rem, 2rem) scale(1.05);
+            transform: translate(0.5rem, 2rem) scale(1.05);
             background: #ffffff;
           }
           .card:nth-child(4) .card__image {
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
           }
           .card:nth-child(4) p {
             transform: translateY(0);
@@ -76,15 +75,16 @@ const Card = ({ data }) => {
 
           .card:nth-child(4) h3 {
             color: #ff0015;
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
           }
 
           .card:hover {
             background: #ffffff;
             z-index: 10;
           }
+
           .card:nth-child(1):hover {
-            transform: translate(-0.5rem, -1rem) scale(1.05);
+            transform: tra.5ate(-2rem, -1rem) scale(1.05);
           }
           .card:nth-child(2):hover {
             transform: translate(1rem, -0.5rem) scale(1.05);
@@ -95,35 +95,34 @@ const Card = ({ data }) => {
 
           .card__image {
             position: relative;
-            transform: scale(1.3) translateY(2rem);
+            transform: scale(1.5) translateY(2.3rem);
             transition: 0.2s;
 
-            width: 5rem;
-            height: 5rem;
+            width: 2.5rem;
           }
 
           .card:hover .card__image {
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
           }
 
           .card h3 {
             color: white;
             transition: 0.2s;
-            font-size: 1.1rem;
-            transform: scale(1.2) translateY(4.5rem);
+            font-size: 1rem;
+            transform: scale(1.1) translateY(4rem);
           }
 
           .card:hover h3 {
             color: #ff0015;
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
           }
 
           .card p {
             margin-top: 0.8rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
             line-height: 130%;
 
-            transform: translateY(10rem);
+            transform: translateY(5rem);
             opacity: 0;
             transition: 0.2s;
           }
