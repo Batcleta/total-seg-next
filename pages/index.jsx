@@ -534,7 +534,7 @@ export default function Home() {
                 <p className={utilStyles.mainParagraph}>{item.description}</p>
 
                 {index % 2 === 0 ? (
-                  <div className={styles.button__wrapper}>
+                  <div>
                     <CTAButton />
                   </div>
                 ) : (
@@ -570,7 +570,16 @@ export default function Home() {
 
                 display: flex;
                 justify-content: center;
-                gap: 3rem;
+
+                gap: 10rem;
+              }
+
+              .equipment__text__wrapper {
+                max-width: 24rem;
+              }
+
+              .equipment__content:last-child {
+                align-items: center;
               }
 
               .equipment__content.reverse {
