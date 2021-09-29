@@ -1,10 +1,12 @@
 import Layout from "../../components/templates/Layout";
 import styles from "../../styles/Cotacao.module.css";
-// import { useProgress } from "../../context/appContext";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const Cotação = () => {
+  const router = useRouter();
+
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
@@ -14,7 +16,9 @@ const Cotação = () => {
       storage[`${key}`] = value;
     }
     let fullData = { ...storage, ...data };
-    axios.post("/api/sendEmailMessage", fullData).then(console.log);
+    // axios.post("/api/sendEmailMessage", fullData).then(console.log);
+
+    router.push(`/obrigado`);
   }
 
   const lStorage = `Sua residência ou a de algum vizinho, foi roubada recentemente?`;
@@ -34,11 +38,11 @@ const Cotação = () => {
             <>
               <input
                 placeholder="Informe seu nome"
-                name="name"
+                name="nome"
                 type="text"
-                {...register("name", { required: true })}
+                {...register("nome", { required: true })}
               />
-              {errors.name && (
+              {errors.nome && (
                 <small className={styles.error__message}>
                   Por Favor informe seu nome
                 </small>
@@ -47,11 +51,11 @@ const Cotação = () => {
             <>
               <input
                 placeholder="Informe um um telefone"
-                name="phone"
+                name="contato"
                 type="tel"
-                {...register("phone", { required: true })}
+                {...register("contato", { required: true })}
               />
-              {errors.phone && (
+              {errors.contato && (
                 <small className={styles.error__message}>
                   Por Favor informe um telefone
                 </small>
