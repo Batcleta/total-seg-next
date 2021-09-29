@@ -59,7 +59,7 @@ const Obrigado = () => {
         }
 
         .thanks__title {
-          font-size: 2.5rem;
+          font-size: 2rem;
           font-weight: 700;
           line-height: 120%;
         }
@@ -79,13 +79,15 @@ const Obrigado = () => {
 
         .redirect__button {
           background-color: #e80013;
-          padding: 1.5rem;
+          padding: 1.2rem;
           text-align: center;
           width: 18em;
-          height: 4rem;
+          height: 3.5rem;
 
           color: white;
           border-radius: 1rem;
+          cursor: pointer;
+          align-self: center;
         }
       `}</style>
     </div>
