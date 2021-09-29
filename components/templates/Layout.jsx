@@ -1,8 +1,13 @@
 import Image from "next/image";
 import theme from "../../styles/Theme";
 
+import { useProgress } from "../../context/appContext";
+
 const Layout = (props) => {
   const { children } = props;
+
+  const { progress } = useProgress();
+
   return (
     <div className="wrapper__cotacao">
       <header className="header">
@@ -112,9 +117,16 @@ const Layout = (props) => {
         }
 
         .progress__bar {
-          background-color: #ff001559;
+          background: #ff001530;
           height: 0.7rem;
           border-radius: 1rem;
+          opacity: 0.4;
+          transition: opacity 0.2s ease-in;
+        }
+
+        .progress__bar:nth-child(-n + ${progress}) {
+          background: #ff0015;
+          opacity: 1;
         }
 
         .main__content {

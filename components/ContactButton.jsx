@@ -12,7 +12,7 @@ const ContactButton = (props) => {
 
   const next = (value) => {
     localStorage.setItem(`${lstorage}`, value);
-    setProgress(localStorage.length);
+    setProgress(1 + localStorage.length);
     router.push(`/total-cotacao/${link}`);
   };
 
