@@ -58,6 +58,46 @@ const ContactButton = (props) => {
           font-size: 1.1rem;
         }
       `}</style>
+
+      <style jsx>{`
+        @media (min-width: 1280px) {
+          .button__wrapper {
+            background-color: ${theme.color.mainColor};
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+
+            display: grid;
+            grid-template-columns: auto;
+            align-content: center;
+            justify-items: center;
+            gap: 1.5rem;
+
+            width: 12.1875em;
+            height: 12.1875em;
+
+            padding: 0;
+            border-radius: 1rem;
+            cursor: pointer;
+
+            transition: 0.2s;
+          }
+
+          .button__wrapper:hover {
+            transform: scale(1.05);
+          }
+
+          .button__icon {
+            width: 3em;
+          }
+
+          .button__wrapper h3 {
+            color: white;
+            font-size: 1rem;
+            line-height: 120%;
+            max-width: 6rem;
+            text-align: center;
+          }
+        }
+      `}</style>
     </>
   );
 };

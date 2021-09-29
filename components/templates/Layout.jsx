@@ -137,9 +137,68 @@ const Layout = (props) => {
           padding: 3rem 1.2rem;
         }
       `}</style>
+
       <style jsx>{`
         @media (min-width: 1280px) {
           .wrapper__cotacao {
+            grid-template-columns: 25rem auto;
+          }
+
+          .header {
+            display: grid;
+            justify-content: center;
+            align-items: start;
+            padding: 2rem;
+          }
+
+          .header__logo {
+            width: 15rem;
+          }
+
+          .header__text-container.web {
+            display: initial;
+          }
+          .header__text-container.mobile {
+            display: none;
+          }
+
+          .main__container {
+            padding: 5rem 6rem;
+            background-color: white;
+
+            height: 100vh;
+            border-radius: 1rem;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+          }
+
+          .main__header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+          }
+
+          .main__header p {
+            font-size: 1.1rem;
+          }
+
+          .progress__bar-container {
+            margin-top: 1.8rem;
+
+            gap: 0.5rem;
+            max-width: 20rem;
+          }
+
+          .progress__bar {
+          }
+
+          .progress__bar:nth-child(-n + ${progress}) {
+          }
+
+          .main__content {
+            margin-top: 0rem;
+            background: none;
+            box-shadow: none;
+            border-radius: 1rem;
+            padding: 3rem 1.2rem;
           }
         }
       `}</style>
