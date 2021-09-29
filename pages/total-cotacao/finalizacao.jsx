@@ -53,7 +53,10 @@ const Cotação = () => {
                 placeholder="Informe um um telefone"
                 name="contato"
                 type="tel"
-                {...register("contato", { required: true })}
+                {...register("contato", {
+                  required: true,
+                  pattern: /([0-9]{2,3})?([0-9]{2})([0-9]{4,5})([0-9]{4})/,
+                })}
               />
               {errors.contato && (
                 <small className={styles.error__message}>
