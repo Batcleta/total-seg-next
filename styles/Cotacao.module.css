@@ -6,6 +6,10 @@
   line-height: 130%;
 }
 
+.main__title span {
+  font-weight: 800;
+}
+
 .main__button {
   margin-top: 3rem;
   display: grid;
@@ -33,4 +37,69 @@
 .button__wrapper h3 {
   color: white;
   font-size: 1.1rem;
+}
+
+.finaliza__text__wrapper {
+}
+
+.finaliza__title {
+  line-height: 130%;
+  font-size: 0.95rem;
+}
+
+.finaliza__title span {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.input__wrapper form {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.input__wrapper input {
+  background: rgba(196, 196, 196, 0.1);
+  border: 1px solid #ff0015;
+  box-sizing: border-box;
+  border-radius: 01rem;
+  padding-left: 1rem;
+
+  height: 54px;
+}
+
+.input__wrapper button {
+  height: 54.41px;
+  background: #ff0015;
+  border-radius: 1rem;
+
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.error__message {
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  color: #ff0015;
+}
+
+.input__wrapper button:hover {
+  transform: scale(1.05);
+}
+
+.privacity__message {
+  font-size: 0.7rem;
+  line-height: 130%;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.privacity__message a {
+  font-weight: 700;
+  font-size: 0.75rem;
 }

@@ -13,7 +13,7 @@ const ContactButton = (props) => {
   const next = (value) => {
     localStorage.setItem(`${lstorage}`, value);
     setProgress(localStorage.length);
-    router.push(`/cotacao/${link}`);
+    router.push(`/total-cotacao/${link}`);
   };
 
   return (
@@ -44,7 +44,7 @@ const ContactButton = (props) => {
           align-items: center;
           gap: 1rem;
 
-          padding: 0.9rem 1.5rem;
+          padding: 1rem 1.5rem;
           border-radius: 1rem;
           cursor: pointer;
         }
