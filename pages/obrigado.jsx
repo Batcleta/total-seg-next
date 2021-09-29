@@ -43,8 +43,19 @@ const Obrigado = () => {
       </div>
 
       <style jsx>{`
+        .thanks__wrapper {
+          display: grid;
+          justify-items: center;
+          text-align: center;
+
+          height: 100vh;
+
+          padding: 1.5rem;
+        }
+
         .thanks__image.logo {
-          max-width: 15.0625em;
+          width: 15.0625em;
+          height: 4.875em;
         }
 
         .thanks__title {
@@ -54,7 +65,8 @@ const Obrigado = () => {
         }
 
         .thanks__image.check {
-          max-width: 5.9375em;
+          width: 5.9375em;
+          height: 5.9375em;
         }
 
         .thanks__subtitle {
@@ -63,6 +75,17 @@ const Obrigado = () => {
 
         .thanks__subtitle span {
           font-weight: 700;
+        }
+
+        .redirect__button {
+          background-color: #e80013;
+          padding: 1.5rem;
+          text-align: center;
+          width: 18em;
+          height: 4rem;
+
+          color: white;
+          border-radius: 1rem;
         }
       `}</style>
     </div>
