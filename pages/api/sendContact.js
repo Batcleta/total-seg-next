@@ -32,7 +32,7 @@ export default function SendContact(req, res) {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       res.sendStatus(500);
-      return console.log(error);
+      return console.log(error.message);
     }
     console.log("Message %s sent: %s", info.messageId, info.response);
     res.status(200).json({

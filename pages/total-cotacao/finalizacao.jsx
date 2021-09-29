@@ -2,14 +2,19 @@ import Layout from "../../components/templates/Layout";
 import styles from "../../styles/Cotacao.module.css";
 // import { useProgress } from "../../context/appContext";
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import axios from "axios";
 
 const Cotação = () => {
   const { register, handleSubmit, formState } = useForm();
   const { errors } = formState;
 
   function onSubmit(data) {
-    return isAddMode ? createUser(data) : updateUser(user.id, data);
+    let storage = {};
+    for (let [key, value] of Object.entries(localStorage)) {
+      storage[`${key}`] = value;
+    }
+    let fullData = { ...storage, ...data };
+    axios.post("/api/sendEmailMessage", fullData).then(console.log);
   }
 
   const lStorage = `Sua residência ou a de algum vizinho, foi roubada recentemente?`;
