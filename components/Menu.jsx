@@ -32,7 +32,7 @@ const SiteMenu = (props) => {
               {menuList.map((item, index) => (
                 <li className="menu__item" key={index}>
                   <i className={item.icon}></i>
-                  <Link href={`//#${item.link}`}>
+                  <Link href={`/#${item.link}`}>
                     <a
                       className={utilStyles.menuLinkText}
                       onClick={() => isToggled(false)}
