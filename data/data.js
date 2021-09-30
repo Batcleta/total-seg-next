@@ -95,6 +95,14 @@ const websiteData = {
         "Minha casa foi assaltada duas vezes no mesmo ano e precisei ir atrás de uma empresa de alarmes. Através de uma amiga que me indicou a Total Segurança, tive meu problema resolvido. O serviço de monitoramento atendeu minha necessidade",
     },
     {
+      image: "/avatar-silas.svg",
+      alt: "Silas K photo",
+      client: "Simas T",
+      whois: "ALARME EMPRESARIAL",
+      testimonial:
+        "Tive muito problema com furto em meu escritório, eu tinha um alarme mas a burocracia era muito grande para acionar a polícia e as fotos que ele tirava do meliante eram ruins e não dava para identificar quem era. Mudei para a Total Segurança e agora estou satisfeito.",
+    },
+    {
       image: "/avatar-simone.svg",
       alt: "Simone L photo",
       client: "Simone L",
@@ -102,14 +110,23 @@ const websiteData = {
       testimonial:
         "Eu moro em são paulo mas tenho uma casa em mongaguá que sempre fica parada e já tive problemas com invasão, contatei a Total Segurança e fui super bem atendida. Alarme muito bom e o pessoal do monitoramento são super atenciosos.",
     },
-    // {
-    //   image: "/avatar-pablo.svg",
-    //   alt: "Paulo Doe photo",
-    //   client: "Paulo Doe",
-    //   whois: "DESIGNER AT BLUSH",
-    //   testimonial:
-    //     "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
-    // },
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Paulo M photo",
+      client: "Paulo M",
+      whois: "ALARME EMPRESARIAL",
+      testimonial:
+        "Trabalho com minimercados há mais de 5 anos e possuo o alarme da total segurança em todos os meus estabelecimentos. Equipe muito bem preparada para lidar com as situações de disparo e fazem manutenção preventiva com frequência.",
+    },
+
+    {
+      image: "/avatar-pablo.svg",
+      alt: "Paulo M photo",
+      client: "Paulo M",
+      whois: "ALARME EMPRESARIAL",
+      testimonial:
+        "Trabalho com minimercados há mais de 5 anos e possuo o alarme da total segurança em todos os meus estabelecimentos. Equipe muito bem preparada para lidar com as situações de disparo e fazem manutenção preventiva com frequência.",
+    },
   ],
   equipment: [
     {
