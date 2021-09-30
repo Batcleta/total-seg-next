@@ -2,12 +2,23 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
+import { gtmVirtualPageView } from "../lib/gtm";
+
 const Obrigado = () => {
   const router = useRouter();
 
   useEffect(() => {
+    const mainDataLayer = {
+      pageTypeName: pageProps.page || null,
+      url: router.pathname,
+    };
+
+    window.onload = () => window.dataLayer?.push({ ...mainDataLayer });
+
+    gtmVirtualPageView(mainDataLayer);
+
     setTimeout(() => router.push("/"), 10000);
-  });
+  }, [pageProps]);
 
   return (
     <div className="thanks__wrapper">
