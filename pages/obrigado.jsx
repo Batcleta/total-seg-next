@@ -5,15 +5,15 @@ import { useRouter } from "next/router";
 const Obrigado = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    setTimeout(() => router.push("/"), 10000);
-  });
+  // useEffect(() => {
+  //   setTimeout(() => router.push("/"), 10000);
+  // });
 
   return (
     <div className="thanks__wrapper">
       <div className="thanks__image logo">
         <Image
-          src={"/web-menu-logo.svg"}
+          src={"/web-logo-total-seguranca.svg"}
           alt="logo total segurança"
           width={241}
           height={78}
@@ -88,6 +88,58 @@ const Obrigado = () => {
           border-radius: 1rem;
           cursor: pointer;
           align-self: center;
+        }
+      `}</style>
+
+      <style jsx>{`
+        @media (min-width: 1280px) {
+          .thanks__wrapper {
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            gap: 4rem;
+            text-align: center;
+
+            height: 100vh;
+            padding: 1.5rem;
+          }
+
+          .thanks__image.logo {
+            width: 20rem;
+          }
+
+          .thanks__title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 120%;
+          }
+
+          .thanks__image.check {
+            width: 8em;
+          }
+
+          .thanks__subtitle {
+            line-height: 130%;
+            font-size: 1.2rem;
+            max-width: 30rem;
+          }
+
+          .thanks__subtitle span {
+            font-weight: 700;
+          }
+
+          .redirect__button {
+            background-color: #e80013;
+            padding: 1.2rem;
+            text-align: center;
+            width: 18em;
+            height: 3.5rem;
+
+            color: white;
+            border-radius: 1rem;
+            cursor: pointer;
+            align-self: center;
+          }
         }
       `}</style>
     </div>

@@ -23,7 +23,7 @@ const Layout = (props) => {
         <header className="header">
           <div className="header__logo">
             <Image
-              src={"/web-menu-logo.svg"}
+              src={"/web-logo-total-seguranca.svg"}
               alt="Logo total segurança"
               width={274}
               height={89}
