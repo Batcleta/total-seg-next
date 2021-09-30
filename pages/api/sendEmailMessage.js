@@ -21,7 +21,7 @@ export default function sendMailMessage(req, res) {
   let mailOptions = {
     from: process.env.MAIL__SENT__FROM,
     to: process.env.MAIL__SEND__TO,
-    subject: process.env.MAIL__SUBJECT,
+    subject: "Forulário de cotação",
     html: `<div>
             
             <h1>Lead do site </h1>

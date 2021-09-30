@@ -18,13 +18,13 @@ export default function SendContact(req, res) {
   let mailOptions = {
     from: process.env.MAIL__SENT__FROM,
     to: process.env.MAIL__SEND__TO,
-    subject: process.env.MAIL__SUBJECT,
+    subject: "Formulário de contato rápido",
     html: `<div>
 
               <h1>Formulário de contato</h1>
 
              <h2>nome: ${data.nome}</h2>
-             <h2>profissão: ${data.profissão}</h2>
+             <h2>Telefone: ${data.telefone}</h2>
 
               </div>`, // html body
   };

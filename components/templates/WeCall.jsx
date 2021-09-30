@@ -2,16 +2,16 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 // theme
 import theme from "../../styles/Theme";
+import { useRouter } from "next/router";
 
 export default function WeCall() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const router = useRouter();
+  const { register, handleSubmit, formState } = useForm();
+  const { errors } = formState;
 
   const weCallSubmit = (data) => {
-    axios.post("/api", data).then(console.log);
+    axios.post("/api/sendContact", data).then(console.log);
+    router.push("/obrigado");
   };
 
   return (
@@ -25,16 +25,36 @@ export default function WeCall() {
 
         <form onSubmit={handleSubmit(weCallSubmit)}>
           <div className="we__Call-inputs">
-            <input
-              type="text"
-              placeholder="Digite seu nome"
-              {...register("nome")}
-            />
-            <input
-              type="phone"
-              placeholder="Digite seu telefone"
-              {...register("telefone")}
-            />
+            <>
+              <input
+                type="text"
+                placeholder="Digite seu nome"
+                name="nome"
+                {...register("nome", { required: true })}
+              />
+              {errors.nome && (
+                <small className={"error__message"}>
+                  Por Favor, informe seu nome
+                </small>
+              )}
+            </>
+
+            <>
+              <input
+                type="tel"
+                placeholder="( xx ) x xxxx-xxxx"
+                name="telefone"
+                {...register("telefone", {
+                  required: true,
+                  pattern: /([0-9]{2,3})?([0-9]{2})([0-9]{4,5})([0-9]{4})/,
+                })}
+              />
+              {errors.telefone && (
+                <small className={"error__message"}>
+                  Por favor, informe um contato válido
+                </small>
+              )}
+            </>
           </div>
           <button className="send__button" type="submit">
             Enviar
@@ -112,6 +132,30 @@ export default function WeCall() {
           color: white;
           cursor: pointer;
         }
+
+        .error__message {
+          position: relative;
+          background: white;
+          padding: 0.8rem;
+          margin: 0 1.5rem;
+          font-size: 0.7rem;
+          border-radius: 0.6rem;
+          margin-top: -0.2rem;
+          color: ${theme.color.mainColor};
+        }
+
+        .error__message:before {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid #fff;
+          left: 19px;
+          top: -19px;
+        }
       `}</style>
 
       <style jsx>{`
@@ -184,6 +228,17 @@ export default function WeCall() {
             background: ${theme.color.mainColor};
             outline: none;
             border: none;
+          }
+
+          .error__message {
+            background: ${theme.color.mainColor};
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+            color: #fff;
+          }
+
+          .error__message:before {
+            border-bottom: 10px solid ${theme.color.mainColor};
           }
         }
       `}</style>

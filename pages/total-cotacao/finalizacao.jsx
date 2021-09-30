@@ -16,7 +16,7 @@ const Cotação = () => {
       storage[`${key}`] = value;
     }
     let fullData = { ...storage, ...data };
-    // axios.post("/api/sendEmailMessage", fullData).then(console.log);
+    axios.post("/api/sendEmailMessage", fullData).then(console.log);
 
     router.push(`/obrigado`);
   }
@@ -50,7 +50,7 @@ const Cotação = () => {
             </>
             <>
               <input
-                placeholder="Informe um um telefone"
+                placeholder="( xx ) x xxxx-xxxx"
                 name="contato"
                 type="tel"
                 {...register("contato", {
