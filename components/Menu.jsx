@@ -17,12 +17,14 @@ const SiteMenu = (props) => {
       <nav className="nav__wrapper">
         <div className="nav__container">
           <div className="nav__image">
-            <Image
-              src={"/web-logo-total-seguranca.svg"}
-              alt="logo total segurança"
-              width={134}
-              height={43}
-            />
+            <Link href="/" passHref>
+              <Image
+                src={"/web-logo-total-seguranca.svg"}
+                alt="logo total segurança"
+                width={134}
+                height={43}
+              />
+            </Link>
           </div>
           <div className="menu__container">
             <div></div>
@@ -30,7 +32,7 @@ const SiteMenu = (props) => {
               {menuList.map((item, index) => (
                 <li className="menu__item" key={index}>
                   <i className={item.icon}></i>
-                  <Link href={`#${item.link}`}>
+                  <Link href={`//#${item.link}`}>
                     <a
                       className={utilStyles.menuLinkText}
                       onClick={() => isToggled(false)}
@@ -74,6 +76,7 @@ const SiteMenu = (props) => {
           transform: scale(${!toggle ? "1" : "1.2"}) translate(${
         !toggle ? "" : "1rem, 1rem"
       });
+      cursor: pointer;
         }
 
         .menu__container {

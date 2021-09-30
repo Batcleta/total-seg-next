@@ -225,16 +225,17 @@ export default function WeCall() {
             height: 3.1rem;
             font-size: 1rem;
 
-            background: ${theme.color.mainColor};
+            background: ${theme.color.mainLinear};
             outline: none;
             border: none;
           }
 
           .error__message {
-            background: ${theme.color.mainColor};
+            background: ${theme.color.mainLinear};
             margin: 0 0.5rem;
             font-size: 0.9rem;
             color: #fff;
+            margin-top: 0rem;
           }
 
           .error__message:before {
