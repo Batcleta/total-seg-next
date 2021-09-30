@@ -16,7 +16,7 @@ const Cotação = () => {
       storage[`${key}`] = value;
     }
     let fullData = { ...storage, ...data };
-    axios.post("/api/sendEmailMessage", fullData).then(console.log);
+    // axios.post("/api/sendEmailMessage", fullData).then(console.log);
 
     router.push(`/obrigado`);
   }
