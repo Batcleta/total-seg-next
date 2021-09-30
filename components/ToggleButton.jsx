@@ -25,9 +25,14 @@ export default function ToggleButton() {
           height: 3rem;
 
           background: ${theme.color.mainColor};
-          border-radius: 2rem;
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25),
-            0px 20px 40px rgba(0, 0, 0, 0.25);
+          border-radius: 2.5rem;
+          border: none;
+          outline: none;
+          box-shadow: ${!toggle
+            ? `0px 2px 5px rgba(0, 0, 0, 0.25),
+            0px 20px 40px rgba(0, 0, 0, 0.25)`
+            : `0px 2px 5px rgba(255, 255, 255, 0.05),
+            5px 5px 40px rgba(255, 255, 255, 0.15)`};
 
           cursor: pointer;
           overflow: hidden;
@@ -39,10 +44,6 @@ export default function ToggleButton() {
           height: 0.1rem;
           margin: 0.2rem 0;
           transition: 0.2s;
-        }
-
-         {
-          /* nav toggle actived */
         }
 
         .nav__toggle > span:nth-child(1) {
@@ -59,8 +60,7 @@ export default function ToggleButton() {
           transform: rotate(${!toggle ? "0" : "-45deg"})
             translate(${!toggle ? "" : ".3rem, -.3rem"});
         }
-
-        @media (min-width: 768px) {
+        @media (min-width: 1280px) {
           .nav__toggle {
             display: none;
           }

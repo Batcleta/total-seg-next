@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import theme from "../../styles/Theme";
 
 const Slider = (props) => {
-  const { children, SperView } = props;
+  const { children, SperView, controls } = props;
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
@@ -20,18 +20,20 @@ const Slider = (props) => {
         <div ref={sliderRef} className="keen-slider">
           {children}
         </div>
-        {/* {slider && (
+        {slider && (
           <>
             <ArrowLeft
+              controls={controls}
               onClick={(e) => e.stopPropagation() || slider.prev()}
               disabled={currentSlide === 0}
             />
             <ArrowRight
+              controls={controls}
               onClick={(e) => e.stopPropagation() || slider.next()}
               disabled={currentSlide === slider.details().size - 1}
             />
           </>
-        )} */}
+        )}
       </div>
       {slider && (
         <div className="dots">
@@ -86,6 +88,7 @@ export default Slider;
 
 function ArrowLeft(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
+  const { controls } = props;
   return (
     <>
       <svg
@@ -107,6 +110,7 @@ function ArrowLeft(props) {
           -webkit-transform: translateY(-50%);
           fill: ${theme.color.mainColor};
           cursor: pointer;
+          display: none;
         }
 
         .arrow--left {
@@ -117,12 +121,25 @@ function ArrowLeft(props) {
           fill: rgba(0, 0, 0, 0.5);
         }
       `}</style>
+
+      <style jsx>{`
+        @media (min-width: 1280px) {
+          .arrow {
+            width: 25px;
+            height: 25px;
+            left: 0;
+
+            display: ${!controls ? "none" : "initial"};
+          }
+        }
+      `}</style>
     </>
   );
 }
 
 function ArrowRight(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
+  const { controls } = props;
   return (
     <>
       <svg
@@ -144,6 +161,7 @@ function ArrowRight(props) {
           -webkit-transform: translateY(-50%);
           fill: ${theme.color.mainColor};
           cursor: pointer;
+          display: none;
         }
 
         .arrow--right {
@@ -153,6 +171,18 @@ function ArrowRight(props) {
 
         .arrow--disabled {
           fill: rgba(0, 0, 0, 0.5);
+        }
+      `}</style>
+
+      <style jsx>{`
+        @media (min-width: 1280px) {
+          .arrow {
+            width: 25px;
+            height: 25px;
+            right: 0;
+
+            display: ${!controls ? "none" : "initial"};
+          }
         }
       `}</style>
     </>

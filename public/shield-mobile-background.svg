@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="415.02" height="433.216" viewBox="0 0 415.02 433.216">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.19;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1.086" y1="0.019" x2="0.367" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d1d1d1"/>
+      <stop offset="0.251" stop-color="#d1d1d1"/>
+      <stop offset="0.469" stop-color="#fff"/>
+      <stop offset="0.628" stop-color="#aeaeae"/>
+      <stop offset="0.803" stop-color="#f5f5f5"/>
+      <stop offset="1" stop-color="#8b8b8b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="1.046" y1="-0.048" x2="0.392" y2="1.009" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f9f9f9"/>
+      <stop offset="0.006" stop-color="#f9f9f9"/>
+      <stop offset="0.238" stop-color="#fff"/>
+      <stop offset="0.414" stop-color="#dbdbdb"/>
+      <stop offset="0.581" stop-color="#fff"/>
+      <stop offset="0.753" stop-color="#cecece"/>
+      <stop offset="0.853" stop-color="#fff"/>
+      <stop offset="1" stop-color="#a4a4a4"/>
+    </linearGradient>
+  </defs>
+  <g id="Grupo_2639" data-name="Grupo 2639" class="cls-1" transform="translate(-10023.226 -3322.378)">
+    <g id="Grupo_2631" data-name="Grupo 2631" transform="translate(10023.226 3322.378)">
+      <path id="Caminho_2398" data-name="Caminho 2398" class="cls-2" d="M.548,49.894s150.8-112.261,307.962,0C322.4,255.869,155.257,342.261,155.257,342.261S84.491,312,38.471,222.679.548,49.894.548,49.894Z" transform="translate(0 115.877) rotate(-22)"/>
+      <path id="Caminho_2399" data-name="Caminho 2399" class="cls-3" d="M.5,46.058s137.766-103.63,281.343,0C294.536,236.2,141.837,315.947,141.837,315.947S77.188,288.012,35.146,205.558.5,46.058.5,46.058Z" transform="translate(17.285 123.085) rotate(-22)"/>
+    </g>
+  </g>
+</svg>
