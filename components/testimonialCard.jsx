@@ -34,12 +34,13 @@ const TestimonialCard = ({ item }) => {
 
         .testimonial__subtitle {
           font-size: 0, 8125rem;
-          color: #ffa3a3;
+          font-weight: 500;
+          color: Rgba(255,255,255,1);;
         }
 
         .testimonial__description {
           font-size: 0, 9rem;
-          color: #ffffff80;
+          color: Rgba(255,255,255,.85);
           line-height: 130%;
         }
 

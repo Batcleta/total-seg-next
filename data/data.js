@@ -79,37 +79,37 @@ const websiteData = {
   ],
   testimonials: [
     {
-      image: "/avatar-pablo.svg",
-      alt: "Jhon Doe photo",
-      client: "Jhon Doe",
-      whois: "DESIGNER AT BLUSH",
+      image: "/avatar-adriana.svg",
+      alt: "Adriana B photo",
+      client: "Adriana B.",
+      whois: "ALARME RESIDENCIAL",
       testimonial:
-        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+        "Moro em uma rua pouco movimentada e tenho medo de ser abordada a noite quando chego em casa. A total segurança me proporcionou uma ótima solução com o controle remoto do meu alarme, assim consigo acionar ele do carro em caso de problemas..",
     },
     {
-      image: "/avatar-pablo.svg",
-      alt: "Jane Doe photo",
-      client: "Jane Doe",
-      whois: "DESIGNER AT BLUSH",
+      image: "/avatar-reginaldo.svg",
+      alt: "Reginaldo S photo",
+      client: "Reginaldo S",
+      whois: "ALARME RESIDENCIAL",
       testimonial:
-        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+        "Minha casa foi assaltada duas vezes no mesmo ano e precisei ir atrás de uma empresa de alarmes. Através de uma amiga que me indicou a Total Segurança, tive meu problema resolvido. O serviço de monitoramento atendeu minha necessidade",
     },
     {
-      image: "/avatar-pablo.svg",
-      alt: "Arthur Doe photo",
-      client: "Arthur Doe",
-      whois: "DESIGNER AT BLUSH",
+      image: "/avatar-simone.svg",
+      alt: "Simone L photo",
+      client: "Simone L",
+      whois: "ALARME RESIDENCIAL",
       testimonial:
-        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+        "Eu moro em são paulo mas tenho uma casa em mongaguá que sempre fica parada e já tive problemas com invasão, contatei a Total Segurança e fui super bem atendida. Alarme muito bom e o pessoal do monitoramento são super atenciosos.",
     },
-    {
-      image: "/avatar-pablo.svg",
-      alt: "Paulo Doe photo",
-      client: "Paulo Doe",
-      whois: "DESIGNER AT BLUSH",
-      testimonial:
-        "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
-    },
+    // {
+    //   image: "/avatar-pablo.svg",
+    //   alt: "Paulo Doe photo",
+    //   client: "Paulo Doe",
+    //   whois: "DESIGNER AT BLUSH",
+    //   testimonial:
+    //     "Meng To's book totally changed my design workflow. It even inspired me to start design workshops and YouTube tutorials.",
+    // },
   ],
   equipment: [
     {
