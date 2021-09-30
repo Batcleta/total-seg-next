@@ -39,7 +39,7 @@ const Obrigado = () => {
       </h3>
 
       <div className="redirect__button" onClick={() => router.push("/")}>
-        Voltar ao ao site{" "}
+        Voltar ao site{" "}
       </div>
 
       <style jsx>{`
