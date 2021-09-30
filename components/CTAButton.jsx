@@ -1,13 +1,15 @@
-import Link from "next/link";
 import theme from "../styles/Theme";
+import router from "next/router";
 
 export default function CTAButton() {
+  const onSubit = () => {
+    router.push("/total-cotacao");
+  };
+
   return (
     <>
-      <div className="cta__button">
-        <Link href="/total-cotacao">
-          <a className="cta__link">Quero um orçamento gratuito</a>
-        </Link>
+      <div className="cta__button" onClick={() => onSubit()}>
+        <a className="cta__link">Quero um orçamento gratuito</a>
       </div>
 
       <style jsx>{`
@@ -25,6 +27,7 @@ export default function CTAButton() {
           border-radius: 4rem;
 
           transition: 0.2s;
+          cursor: pointer;
         }
 
         .cta__button:hover {

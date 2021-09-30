@@ -138,6 +138,15 @@ const Layout = (props) => {
             padding: 1rem 1.2rem;
           }
 
+          .main__header-title {
+            display: flex;
+            gap: 1rem;
+          }
+
+          .image__header-title {
+            width: 2.5rem;
+          }
+
           .main__header {
             padding: 1rem 1.2rem;
           }
@@ -255,16 +264,11 @@ const Layout = (props) => {
             }
 
             .main__header-title {
-              display: flex;
               gap: 2rem;
             }
 
             .main__header-title > h1 {
               font-size: 2.2rem;
-            }
-
-            .image__header-title {
-              width: 2.5rem;
             }
 
             .main__header-subtitle {

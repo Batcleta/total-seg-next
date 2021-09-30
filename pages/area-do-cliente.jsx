@@ -64,7 +64,7 @@ export default function ClientArea() {
       <style jsx>{`
         .client__wrapper {
           width: 100vw;
-          height: 100vh;
+          margin-top: 8rem;
 
           display: grid;
           justify-content: center;
