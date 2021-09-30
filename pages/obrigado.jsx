@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import { gtmVirtualPageView } from "../lib/gtm";
 
-const Obrigado = () => {
+const Obrigado = ({ pageProps }) => {
   const router = useRouter();
 
   useEffect(() => {
