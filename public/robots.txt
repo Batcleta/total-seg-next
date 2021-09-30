@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: /area-do-cliente/
+
+User-agent: *
+Allow: /
+
+
+Sitemap: https://totalseguranca.com/sitemap.xml

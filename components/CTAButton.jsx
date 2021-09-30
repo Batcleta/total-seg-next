@@ -9,7 +9,7 @@ export default function CTAButton() {
   return (
     <>
       <div className="cta__button" onClick={() => onSubit()}>
-        <a className="cta__link">Quero um orçamento gratuito</a>
+        <div className="cta__link">Quero um orçamento gratuito</div>
       </div>
 
       <style jsx>{`
