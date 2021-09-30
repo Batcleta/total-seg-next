@@ -613,7 +613,7 @@ export default function Home() {
         <WeCall />
       </main>
 
-      <footer className={styles.container}>
+      <footer className={styles.container} id="contato">
         <Image
           src="/web-logo-total-seguranca.svg"
           alt="Total segurança Logo"

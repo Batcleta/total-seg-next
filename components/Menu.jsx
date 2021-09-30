@@ -42,7 +42,7 @@ const SiteMenu = (props) => {
               ))}
             </ul>
             <div className="menu__costumer__area">
-              <Link href="#area">
+              <Link href="/area-do-cliente">
                 <a className={utilStyles.menuLinkText}>Área do cliente</a>
               </Link>
             </div>
