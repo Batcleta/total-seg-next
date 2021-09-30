@@ -113,6 +113,7 @@ section {
 body {
   line-height: 1;
   font-family: "Mulish", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
 ol,
