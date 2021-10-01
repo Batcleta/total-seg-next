@@ -17,7 +17,7 @@ const Cotação = () => {
     }
     let fullData = { ...storage, ...data };
     axios.post("/api/sendEmailMessage", fullData).then(console.log);
-
+    dataLayer.push({ event: "thanks" });
     router.push(`/obrigado`);
   }
 

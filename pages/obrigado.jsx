@@ -6,7 +6,6 @@ const Obrigado = () => {
   const router = useRouter();
 
   useEffect(() => {
-    dataLayer.push({ event: "thanks" });
     setTimeout(() => router.push("/"), 10000);
   });
 
