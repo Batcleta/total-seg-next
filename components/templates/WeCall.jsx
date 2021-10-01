@@ -11,6 +11,12 @@ export default function WeCall() {
 
   const weCallSubmit = (data) => {
     axios.post("/api/sendContact", data).then(console.log);
+
+    window.dataLayer?.push({
+      event: "thanksPageTeste",
+      url: router.pathname,
+    });
+
     router.push("/obrigado");
   };
 
