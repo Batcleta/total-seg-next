@@ -6,6 +6,12 @@ const Obrigado = () => {
   const router = useRouter();
 
   useEffect(() => {
+    window.onload = () =>
+      window.dataLayer?.push({
+        event: "thanksPage",
+        url: router.pathname,
+      });
+
     setTimeout(() => router.push("/"), 10000);
   });
 

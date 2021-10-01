@@ -12,12 +12,14 @@ const Cotação = () => {
 
   function onSubmit(data) {
     let storage = {};
+
     for (let [key, value] of Object.entries(localStorage)) {
       storage[`${key}`] = value;
     }
     let fullData = { ...storage, ...data };
+
     axios.post("/api/sendEmailMessage", fullData).then(console.log);
-    dataLayer.push({ event: "thanks" });
+
     router.push(`/obrigado`);
   }
 
