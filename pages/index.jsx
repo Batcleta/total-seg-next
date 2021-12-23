@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+import a from "next/link";
 // Styles
 import styles from "../styles/Home.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -18,6 +18,58 @@ import TestimonialCard from "../components/testimonialCard";
 export default function Home() {
   return (
     <div>
+      <div className="whatsapp-button__wrapper">
+        <a
+          href={"https://wa.me/5511993047551"}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div className="whatsapp-button__image">
+            {" "}
+            <Image
+              src={"/whatsapp-ico.svg"}
+              width={50}
+              height={50}
+              alt={"item.alt"}
+            />
+          </div>
+        </a>
+
+        <style jsx>{`
+          .whatsapp-button__wrapper {
+            cursor: pointer;
+            z-index: 1000;
+            padding: 0.5rem;
+
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: #55c980;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.2s cubic-bezier(0.17, 0.67, 0.54, 0.87);
+          }
+
+          .whatsapp-button__wrapper:hover {
+            transform: scale(1.1);
+          }
+
+          @media (min-width: 1200px) {
+            .whatsapp-button__wrapper {
+              bottom: 2.5rem;
+              right: 2.5rem;
+              width: 5rem;
+              height: 5rem;
+            }
+          }
+        `}</style>
+      </div>
       <Head>
         <title>Total Segurança</title>
         <meta
@@ -406,11 +458,11 @@ export default function Home() {
                 <div className="keen-slider__slide slider__item" key={index}>
                   <TestimonialCard item={item} />
                   {index === 0 ? (
-                    <Link href="/area-do-cliente">
+                    <a href="/area-do-cliente">
                       <a className="testimonial__add__link">
                         Envie seu depoimento
                       </a>
-                    </Link>
+                    </a>
                   ) : (
                     ""
                   )}
@@ -425,11 +477,11 @@ export default function Home() {
                 <div className="keen-slider__slide slider__item" key={index}>
                   <TestimonialCard item={item} />
                   {index === 0 ? (
-                    <Link href="/area-do-cliente">
+                    <a href="/area-do-cliente">
                       <a className="testimonial__add__link">
                         Envie seu depoimento
                       </a>
-                    </Link>
+                    </a>
                   ) : (
                     ""
                   )}
@@ -623,13 +675,13 @@ export default function Home() {
 
         <div className="footer__info">Total segurança © 2021</div>
         <div className="footer__links">
-          <Link href="/termos-de-serviço">
+          <a href="/termos-de-serviço">
             <a className="footer__link">Termos de serviço</a>
-          </Link>
+          </a>
 
-          <Link href="/termos-de-privacidade">
+          <a href="/termos-de-privacidade">
             <a className="footer__link">Termos de privacidade</a>
-          </Link>
+          </a>
         </div>
 
         <style jsx>{`
