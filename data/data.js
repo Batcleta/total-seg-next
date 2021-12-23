@@ -118,15 +118,6 @@ const websiteData = {
       testimonial:
         "Trabalho com minimercados há mais de 5 anos e possuo o alarme da total segurança em todos os meus estabelecimentos. Equipe muito bem preparada para lidar com as situações de disparo e fazem manutenção preventiva com frequência.",
     },
-
-    {
-      image: "/avatar-pablo.svg",
-      alt: "Paulo M photo",
-      client: "Paulo M",
-      whois: "ALARME EMPRESARIAL",
-      testimonial:
-        "Trabalho com minimercados há mais de 5 anos e possuo o alarme da total segurança em todos os meus estabelecimentos. Equipe muito bem preparada para lidar com as situações de disparo e fazem manutenção preventiva com frequência.",
-    },
   ],
   equipment: [
     {
