@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import a from "next/link";
+import Link from "next/link";
 // Styles
 import styles from "../styles/Home.module.css";
 import utilStyles from "../styles/utils.module.css";
@@ -458,11 +458,11 @@ export default function Home() {
                 <div className="keen-slider__slide slider__item" key={index}>
                   <TestimonialCard item={item} />
                   {index === 0 ? (
-                    <a href="/area-do-cliente">
+                    <Link href="/area-do-cliente">
                       <a className="testimonial__add__link">
                         Envie seu depoimento
                       </a>
-                    </a>
+                    </Link>
                   ) : (
                     ""
                   )}
@@ -477,11 +477,11 @@ export default function Home() {
                 <div className="keen-slider__slide slider__item" key={index}>
                   <TestimonialCard item={item} />
                   {index === 0 ? (
-                    <a href="/area-do-cliente">
+                    <Link href="/area-do-cliente">
                       <a className="testimonial__add__link">
                         Envie seu depoimento
                       </a>
-                    </a>
+                    </Link>
                   ) : (
                     ""
                   )}
@@ -675,13 +675,13 @@ export default function Home() {
 
         <div className="footer__info">Total segurança © 2021</div>
         <div className="footer__links">
-          <a href="/termos-de-serviço">
+          <Link href="/termos-de-serviço">
             <a className="footer__link">Termos de serviço</a>
-          </a>
+          </Link>
 
-          <a href="/termos-de-privacidade">
+          <Link href="/termos-de-privacidade">
             <a className="footer__link">Termos de privacidade</a>
-          </a>
+          </Link>
         </div>
 
         <style jsx>{`
