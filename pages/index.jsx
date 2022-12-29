@@ -20,7 +20,7 @@ export default function Home() {
     <div>
       <div className="whatsapp-button__wrapper">
         <a
-          href={"https://wa.me/5511965809783"}
+          href={"https://wa.me/5511988916822"}
           rel="noreferrer"
           target="_blank"
         >
